@@ -1,0 +1,24 @@
+.bindphone{
+	display: flex;
+	align-items: center;
+	height: 47.5%;
+}
+.bindphonelist{
+	width: 100%;
+	padding-bottom: .20rem;
+	border-bottom: .02rem solid #dcdcdc;
+}
+.bindphonelist span{
+	margin-right: .56rem;
+	font-size: .30rem;
+}
+.bindphonelist input{
+	font-size: .26rem;
+	outline: none;
+}
+.getcode{
+	float: right;
+	color: #36a3ff;
+	font-size: .26rem;
+	text-align: right;
+}

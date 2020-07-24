@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>工作台</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <style type="text/css">
+        .fl,
+        .left {
+            float: left;
+        }
+
+        .fr,
+        .right {
+            float: right;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .flex_item {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        .workbench {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e1eef8;
+            font-size: .3rem;
+        }
+
+        .header {
+            padding: 0 0.2rem;
+            background: url("http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/head-img.png") center top no-repeat;
+            background-size: 100% 100%;
+            color: #fff;
+        }
+
+        .header .title {
+            height: .84rem;
+            line-height: .84rem;
+        }
+
+        .header .iconfont {
+            margin-left: 0.10rem;
+            font-size: .28rem;
+        }
+
+        .header .time {
+            font-size: .24rem;
+        }
+
+        .header .statistic {
+            padding: 0 .3rem;
+            text-align: center;
+        }
+
+        .header .swiper-container {
+            height: 2.9rem;
+        }
+
+        .header .tabs .part {
+            height: .9rem;
+            line-height: .9rem;
+            display: inline-block;
+            margin: 0 .4rem;
+            color: #fff;
+        }
+
+        .header .tabs .active {
+            font-size: .4rem;
+            border-bottom: .05rem solid #fff;
+
+        }
+
+        .header .swiper-wrapper {
+            padding: .5rem 0;
+        }
+
+        .header .swiper-wrapper b {
+            font-size: .4rem;
+            padding-bottom: .2rem;
+            display: block;
+        }
+
+        .header .swiper-wrapper p {
+            font-size: .26rem;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            top: -1rem;
+            margin: 0 .2rem;
+            border-radius: .2rem;
+            background: #fff;
+            padding: 0 .24rem;
+        }
+
+        .container .item {
+            text-align: center;
+            padding-bottom: .2rem;
+        }
+
+        .container .title {
+            color: #353535;
+            font-size: .3rem;
+            padding: .3rem 0 .24rem;
+        }
+
+        .container .title .fl {
+            padding-left: .2rem;
+            position: relative;
+        }
+
+        .container .title .fl::before {
+            content: "";
+            display: inline-block;
+            background: url("http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/title-icon.png") center center no-repeat;
+            width: 0.06rem;
+            height: .36rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .container .rotate {
+            transform: rotate(-180deg);
+        }
+
+        .container .title .tips {
+            color: #999;
+            font-size: .24rem;
+            margin-left: .2rem;
+        }
+
+        .container .float {
+            color: #353535;
+        }
+
+        .container .float-item {
+            width: 25%;
+        }
+
+        .container .float .img {
+            width: .7rem;
+            height: .7rem;
+        }
+
+        .container .float .tips {
+            font-size: .24rem;
+            white-space: pre-wrap;
+        }
+
+        .container .break {
+            line-height: .36rem;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            font-size: .26rem;
+            background: #fff;
+            width: 100%;
+            text-align: center;
+            padding: .1rem 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer .flex_item {
+            color: #353535;
+        }
+
+        .footer .active {
+            color: #36A3FF;
+        }
+
+        .footer img {
+            width: .46rem;
+            height: .46rem;
+        }
+
+        .footer p {
+            line-height: .4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        reset();
+    </script>
+    <div class="workbench">
+        <div class="header">
+            <div class="title clearfix">
+                <div class="fl">您好！ 商户名XXX <span>代理商</span></div>
+                <navigator url="/pages/tab_mine/account/changeAccount" class="fr">
+                    切换账户<span class="iconfont icon-d-right"></span>
+                </navigator>
+            </div>
+            <div class="time">2020/07/13</div>
+            <div class="statistic">
+                <div class="tabs flex">
+                    <span class="part flex_item">昨日</span>
+                    <span class="part flex_item active">今日</span>
+                    <span class="part flex_item">本月</span>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="content-slide flex">
+                                <div class="flex_item">
+                                    <b>11</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-slide flex">
+                                <div class="flex_item">
+                                    <b>22</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                                <div class="flex_item">
+                                    <b>99</b>
+                                    <p>订单数</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="content-slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .dialog-box {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 9999;
+                display: block;
+                box-sizing: border-box;
+            }
+
+            .dialog-mask {
+                position: fixed;
+                z-index: 9999;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.6);
+            }
+
+            .dialog-modal {
+                position: fixed;
+                z-index: 9999;
+                width: 80%;
+                max-width: 300px;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                background-color: #fff;
+                text-align: center;
+                border-radius: .1rem;
+                overflow: hidden;
+                padding: .5rem .3rem;
+            }
+
+            .dialog-modal .icon-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: .16rem;
+                color: #36A3FF;
+                font-size: .4rem;
+            }
+
+            .navigator-box img {
+                width: 1rem;
+            }
+        </style>
+
+        <div class="dialog-box">
+            <div class="dialog-mask"></div>
+            <div class="dialog-modal">
+                <i class="iconfont icon-close"></i>
+                <div class="navigator-box flex">
+                    <a href="" class="flex_item">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png">
+                        <p>充电线</p>
+                    </a>
+                    <a href="" class="flex_item">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png">
+                        <p>充电宝</p>
+                    </a>
+                    <a href="" class="flex_item">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png">
+                        <p>充电桩</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="item">
+                <div class="title clearfix">
+                    <div class="fl">
+                        分发管理<span class="tips">对代理商、铺货商的创建和管理</span>
+                    </div>
+                    <div class="fr iconfont icon-d-up"></div>
+                </div>
+                <div class="float clearfix">
+                    <a href="" class="float-item fl">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png" class="img">
+                        <div class="tips break">新增<br>代理/铺货商</div>
+                    </a>
+                    <a href="" class="float-item fl">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png" class="img">
+                        <div class="tips break">新增<br>代理/铺货商</div>
+                    </a>
+                    <a href="" class="float-item fl">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png" class="img">
+                        <div class="tips break">新增<br>代理/铺货商</div>
+                    </a>
+                    <a href="" class="float-item fl">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png" class="img">
+                        <div class="tips break">新增<br>代理/铺货商</div>
+                    </a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title clearfix">
+                    <div class="fl">
+                        分发管理<span class="tips">对代理商、铺货商的创建和管理</span>
+                    </div>
+                    <div class="fr iconfont icon-d-up"></div>
+                </div>
+                <div class="float clearfix">
+                    <a href="" class="float-item fl">
+                        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/distribute-add.png" class="img">
+                        <div class="tips break">新增<br>代理/铺货商</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer flex">
+        <a href="workbench.html" class="flex_item active">
+            <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/tab-work-s.png">
+            <p>工作台</p>
+        </a>
+        <a href="mine.html" class="flex_item">
+            <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/tab-mine.png">
+            <p>我的</p>
+        </a>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var tabsSwiper;
+            tabsSwiper = new Swiper('.swiper-container', {
+                speed: 500,
+                initialSlide: 1,
+                onSlideChangeStart: function () {
+                    $(".tabs .active").removeClass('active');
+                    $(".tabs span").eq(tabsSwiper.activeIndex).addClass('active');
+                }
+            });
+            $(".tabs span").on('touchstart mousedown', function (e) {
+                e.preventDefault()
+                $(".tabs .active").removeClass('active');
+                $(this).addClass('active');
+                tabsSwiper.swipeTo($(this).index());
+            });
+            $(".tabs span").click(function (e) {
+                e.preventDefault();
+            });
+
+            $('.container .title').on('click', function () {
+                $(this).find('.iconfont').toggleClass('rotate');
+                $(this).siblings('.float').stop().slideToggle('fast')
+            })
+
+
+
+            $('.dialog-mask,.dialog-box .icon-close').on('click', function () {
+                $('.dialog-box').hide();
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <meta content="yes" name="apple-touch-fullscreen" />
+        <title>Document</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./js/reset.js"></script>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/offlinecommon.css" />
+        <link rel="stylesheet" href="./css/leasedSuccess.css" />
+    </head>
+    <body>
+        <script>
+            reset();
+        </script>
+
+        <div id="printbtn" class="homepagebtn" style="background: url(./image/1026/homepagebtn.png) no-repeat; background-size: 100% 100%;" onclick="goWxAppHomePageForHomePageButton"></div>
+        <div class="checkresult">
+            <div>
+                <img src="./image/1026/success.png" alt="" srcset="" />
+                <div class="checkresulttip">租借成功</div>
+                <div class="checkresultmiaoshu">请尽快从仓口取走充电宝，使用后如需归还可在首页查找附近的可归还网点进行归还</div>
+            </div>
+        </div>
+
+        <div class="maincontentbox costdetailpage">
+            <div class="feescaletitbox">
+                <div class="feescaletitflex">
+                    <div class="feescaletit feescaletitl">
+                        <span></span>
+                        租借订单详情
+                    </div>
+                </div>
+            </div>
+            <div class="costdetail">
+                <div class="costmain">
+                    <div class="costmainflex">
+                        订单编号
+                        <span>{{responseInfo.tradeId}}</span>
+                    </div>
+                </div>
+                <div class="costmain">
+                    <div class="costmainflex">
+                        租借地点
+                        <span>{{responseInfo.device.addr}}</span>
+                    </div>
+                </div>
+                <div class="costmain">
+                    <div class="costmainflex">
+                        充电宝ID
+                        <span>{{responseInfo.charger.id}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

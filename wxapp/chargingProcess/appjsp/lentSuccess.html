@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>租电</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/offlinecommon.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/getChargingCode.css">
+    <style type="text/css">
+        .checkresult img{
+          display: inline-block;
+          width: 1.8rem;
+          height: auto;
+          vertical-align: middle;
+        }
+        .checkresulttip{
+          display: inline-block;
+          vertical-align: middle;
+          font-size: .38rem;
+        }
+        .checkresultmiaoshu{
+          padding: 0 .2rem;
+          line-height: .38rem;
+          font-size: .28rem;
+          color: #959595;
+        }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div id="printbtn" class="homepagebtn"></div>
+    <div class="checkresult">
+      <div>
+        <img src="../images/success.png" alt="">
+        <p class="checkresulttip">租借成功</p>
+        <p class="checkresultmiaoshu">请尽快从仓口取走充电宝，使用后如需归还可在首页查找附近的可归还网点进行归还</p>   
+      </div>
+    </div>
+
+    <div class="maincontentbox costdetailpage">
+          <div class="feescaletitbox">
+              <div class="feescaletitflex">              
+                  <div class="feescaletit feescaletitl"><i></i>租借订单详情</div>
+              </div>
+          </div>
+          <div class="costdetail">
+            <div class="costmain">
+              <div class="costmainflex">
+                 订单编号<span>222230988777757</span>
+              </div>   
+            </div>
+            <div class="costmain">
+              <div class="costmainflex">
+                 租借时间<span>2020-03-23 21:34:45</span>
+              </div>   
+            </div>
+            <div class="costmain">
+              <div class="costmainflex">
+                 租借地点<span>XXXXXX终端商户</span>
+              </div>   
+            </div>
+            <div class="costmain">
+              <div class="costmainflex">
+                 充电宝ID<span>194343440000045</span>
+              </div>   
+            </div>
+          </div>           
+      </div>
+      <div class="pageadver">
+          <img src="../images/pageadver.png">
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 民生银行广告拆 -->
+    <div class="layer" style="display: none;">
+      <div class="layercontbox">
+        <div class="dongman"></div>
+        <div style="height: 25%;"></div>
+        <div class="layercont">
+          <div class="jinbi"><img src="../../1to4/img/jinbi.png"></div>
+          <div class="txing"></div>
+          <div style="height: 46.36%;"></div>
+          <p class="gongxi">恭喜您</p>
+          <div style="height: 4.09%;"></div>
+          <p class="getreward">获得租电福利红包</p>        
+          <a href="" class="layerbtn"><img src="../../1to4/img/chaibtn.png"></a>
+        </div>
+        <div class="shaclose"><img src="../../1to4/img/closebtn.png"></div>    
+      </div>
+    </div>
+    <!-- 民生银行广告去看看 -->
+    <div class="layer" style="display: none;">
+      <div class="layercontbox">
+        <div class="suipian"></div>
+        <div style="height: 4.09%;"></div>
+        <div class="layergotolook">
+          <div class="looktopbg"></div>
+          <div class="lookbottbg"></div>
+          <div style="height: 3.55%;"></div>
+          <div class="cardbg">
+            <div class="carlogo"></div>
+            <div style="height: 9.58%"></div>
+            <div class="getsuccess">[领取成功]</div>
+            <div style="height: 5.22%"></div>
+            <a href="https://www.baidu.com/" class="blucard"></a>
+            <div class="cardbgblbg"></div>
+            <div class="cardbgbrbg"></div>
+          </div>
+          <div class="redbgb"></div>
+          <div style="height: 4.09%;"></div>       
+          <a href="" class="layerbtn" style="bottom: 8.75%;height: 12.5%;"><img style="width: 59.7%;" src="../../1to4/img/aplybtn.png"></a>
+        </div>
+        <div class="shaclose"><img src="../../1to4/img/closebtn.png"></div>    
+      </div>
+    </div>
+</body>
+</html>
+
+<script type="  ">
+  wx.ready(function () {
+    wx.checkJsApi({
+        jsApiList: [
+            'getLocation'
+        ],
+        
+        success: function (res) {
+            // alert(JSON.stringify(res));
+            // alert(JSON.stringify(res.checkResult.getLocation));
+            if (res.checkResult.getLocation == false) {
+                alert('你的微信版本太低，不支持微信JS接口，请升级到最新的微信版本！');
+                return;
+            }
+        }
+    }); 
+    wx.error(function(res){
+        alert("接口调取失败")
+    });
+    wx.getLocation({
+      success: function (res) {
+        alert(JSON.stringify(res));
+      },
+      cancel: function (res) {
+        alert('用户拒绝授权获取地理位置');
+      }
+    });
+});
+</script>

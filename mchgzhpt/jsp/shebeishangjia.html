@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>设备上架</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <style type="text/css">
+          .shangjiainfo{
+            padding: .3rem .3rem 1.2rem;
+            margin-top: .2rem;
+            background: #fff;
+          }
+          .shangjiainfol{
+            padding: .3rem 0;
+            color: #444;
+            font-size: .28rem;
+            border-bottom: 1px solid #e5e5e5;
+          }
+          .shangjiainfol:last-child{
+            border-bottom: none;
+          }
+          .shangjiainfol a{
+            color: #36a3ff;
+          }
+          .shangjiainfol .icon{
+           display:inline-block;
+           height: 4px;
+           width: 4px;
+           background-color: #36a3ff;
+           border-radius:50%; 
+           margin-right: .1rem;
+           vertical-align: middle; 
+          }
+          .fenrunshow{
+            margin-bottom: .2rem;
+          }
+          .tipfenrun{
+            color: #fd3939;
+            font-size: .25rem;
+          }
+          .setfenrun input{
+            color: #959595;
+            font-size: .26rem;
+            height: .7rem;
+            border-radius: .1rem;
+            padding: 0 .2rem;
+            margin-left: .2rem;
+            margin-right: .1rem;
+            background:#f1f3f6;
+          }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="shangjiainfo">
+      <div> 
+        <div class="shangjiainfol">
+            <div class="fenrunshow"><span class="icon"></span>可分润比例75%，设备共77个,  <a>详情></a></div>          
+            <div class="setfenrun"><label>设置分润</label><input type="" name="" value="">%</div>          
+        </div>
+        <div class="shangjiainfol">
+            <div class="fenrunshow"><span class="icon"></span>可分润比例75%，设备共77个,  <a>详情></a></div>           
+            <div class="setfenrun"><label>设置分润</label><input type="" name="" value="">%</div>          
+        </div>
+        <div class="shangjiainfol">
+            <div class="fenrunshow"><span class="icon"></span>可分润比例75%，设备共77个,  <a>详情></a></div>           
+            <div class="setfenrun"><label>设置分润</label><input type="" name="" value="">%</div>          
+        </div>
+      </div>
+     
+      <div class="tipfenrun">提醒：设置分润值需小于等于可分润比例值</div>
+    </div>
+</body>
+</html>

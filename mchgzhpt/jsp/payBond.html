@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>缴纳保证金</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+    <style type="text/css">
+      .header-con{
+        position:relative;
+        font-size: .30rem;
+        height:4rem;
+        width:100%;
+        background:url(../img/bg.jpg) no-repeat;
+        background-size:100%;
+      }
+      .center-con{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        color:#fff;
+        text-align: center;
+      }
+      .center-con .title{
+        margin:5px 0;
+        opacity: .7;
+      }
+      .center-con .money{
+        font-size:0.7rem;
+        margin:5px 0 10px 0;
+      }
+      .bond-detail{
+        display: block;
+
+      }
+      .bond-detail p{
+        float: right;
+        padding: .5rem .2rem;
+        color: #fff;
+      }
+      .button{
+         position: fixed;
+         bottom: 0.3rem;
+         left: 0;
+         height: .9rem;
+         line-height:.9rem;
+         width: 100%;
+         padding: 0 .3rem;
+         text-align: center;
+         font-size: .3rem;
+         color: #fff;
+         display: block;
+         background: #36A3FE;
+         border-radius:5px;
+         border:none;
+         outline: none;
+        }
+         .contract{
+          margin: .46rem .3rem;
+          font-size: .3rem;
+         }  
+         .contract a{
+          color: #36a3ff;
+         }
+         .icon-selected{
+          font-size: .32rem;
+          margin-right: .1rem;
+          color: #d6d6d6;
+         } 
+         .active{
+          color: #36a3ff;
+         }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="header-con">
+      <div class="center-con">
+          <div>
+            <p class="title">保证金金额</p>             
+            <p class="money">4000.00</p>
+            <p class="title" style="color: #fdff4c;">共有20台设备，需缴纳¥400.00</p>
+          </div>
+      </div>
+    </div>
+    <select id="dd">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="opel">Opel</option>
+      <option value="audi">Audi</option>
+    </select>
+    <div class="contract" id="contract"><span class="icon iconfont icon-selected active"></span><a href="">《合作条款》</a></div>
+    <button class="button" id="button">缴纳</button> 
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+      $("#contract span").click(function(){
+        if($(this).hasClass("active")){
+          $(this).removeClass("active");
+          $("#button").attr("disabled",true);
+          $("#button").css("opacity",".5");
+        }else{
+          $(this).addClass("active");
+          $("#button").attr("disabled",false);
+          $("#button").removeAttr("style");
+        }
+      })
+      $("#button").click(function(){
+        console.log($("#dd").val())
+      })
+    </script>
+</body>
+</html>

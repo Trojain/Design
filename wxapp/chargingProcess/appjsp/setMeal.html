@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>设置套餐</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/offlinecommon.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/scanResult.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../appcss/setMeal.css"> -->
+</head>
+<body>
+    <script>reset();</script>
+    <div class="setmeal" style="height: 100%">
+        <div class="paymentstep">
+            <div class="paymentstepflex">
+              <div class='stepdetail stepdetailfirst'>
+                <div class='iconimg'><img src="../images/scaniconimg.png"></div>
+                <div class='steptext'>1.选择充电套餐</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/payiconimg.png"></div>
+                <div class='steptext'>2.支付金额</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/charchingiconimg.png"></div>
+                <div  class='steptext'>3.在设备上输入密码</div>
+              </div>            
+              <div class="dotted"></div>
+              <div class='clear'></div>
+            </div>
+        </div>
+
+        <div class="maincontentbox">
+            <div class="feescaletitbox">
+                <div class="feescaletitflex">              
+                    <div class="feescaletit feescaletitl"><i></i>计费规则</div>
+                    <div class="feescaletit feescaletitr">使用帮助<i class="iconfont icon-xiala"></i></div> 
+                </div>
+            </div>
+            <div class="feeslistbox">
+                <div class="feeslistboxscroll">  
+                    <p class="feeslist">* 确认充电器已插电，且指示灯亮起；</p>
+                    <p class="feeslist">* 支付成功后，点击完成获取密码；</p>
+                    <p class="feeslist">* 在设备上输入密码，即可充电。</p>
+                </div>
+            </div> 
+
+        <div class="meal">
+            <div class="mealflex">
+                <div class="meallist" data-paymoney='1' data-feetimerange='1' onclick="choose(this)">
+                    <div class="meallistflex">
+                        <div class="selecticon"></div> 
+                        <div class="meallistflexl">充电<span>1</span>小时</div>
+                        <div class="meallistflexr">￥<span>2</span></div>
+                    </div>
+                </div>
+                <div class="meallist" data-paymoney='1' data-feetimerange='3' onclick="choose(this)">
+                    <div class="meallistflex">
+                        <div class="selecticon"></div> 
+                        <div class="meallistflexl">充电<span>3</span>小时</div>
+                        <div class="meallistflexr">￥<span>3</span></div>
+                    </div>
+                </div>
+                <div class="meallist" data-paymoney='1' data-feetimerange='12' onclick="choose(this)">
+                    <div class="meallistflex">
+                        <div class="selecticon"></div> 
+                        <div class="meallistflexl">充电<span>12</span>小时</div>
+                        <div class="meallistflexr">￥<span>5</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+              <div class="scanbtn">去支付</div> 
+            <div class='readagreement'>
+                <label class="checkbox">
+                <input type="checkbox"  /> 我已阅读
+                </label>
+                <span>《充电协议》</span> 
+                <!-- <span>《委托扣款授权书》</span> -->
+              </div> 
+
+        </div>       
+        <div class="pageadver">
+            <img src="../images/pageadver.png">
+        </div>  
+    </div>
+    <script type="text/javascript">
+        window.onload = function(){
+            var meals = document.querySelectorAll(".meallist");
+            for(var i = 0;i<meals.length;i++){
+                var feeTimeRange = meals[i].dataset.feetimerange;
+                if(feeTimeRange == 3){
+                    meals[i].className = "meallist active";
+                    break;
+                }
+            }
+        }
+        function choose(obj){
+            var meals = document.querySelectorAll(".meallist");
+            for(var i = 0;i<meals.length;i++){
+               meals[i].className = "meallist";
+            }
+            obj.className = "meallist active";
+            console.log(obj.dataset.paymoney)
+        }
+    </script>
+</body>
+</html>

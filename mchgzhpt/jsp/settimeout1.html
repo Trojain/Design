@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定时器</title>
+</head>
+<body>
+	<div onclick="clickbtn()">点击按钮</div>
+</body>
+<script type="text/javascript">
+	function delay(){
+		setTimeout(function(){
+			if(aa()){
+				return false;
+			}
+		},2000)
+	}
+	function aa(){
+		if (bb()){
+			setTimeout(function(){
+				return true;
+			},1000)
+		}
+	}
+	function bb(){
+		setTimeout(function(){
+			return true;
+		},1000)
+	}
+	function clickbtn(){
+		var bluetoothDevelop = delay();
+	    if (!bluetoothDevelop) {
+	        console.log("openBeech--bluetoothDevelop:" + bluetoothDevelop);
+	    }
+	}
+</script>
+</html>

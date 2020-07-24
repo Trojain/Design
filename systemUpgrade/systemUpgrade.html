@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统升级提示</title>
+    <style type="text/css">
+    	div,img,p{
+    		padding: 0;
+    		margin: 0;
+    	}
+    	.updeoutbox{
+		    position: fixed;
+    		height: 100%;
+    		width: 100%;
+    	}
+    	.updeinbox{
+    		height: 100%;
+    		display: flex;
+    		align-items: center;
+    	}
+    	.updeinbox img{
+    		display: block;
+    		margin: 0 auto;
+    		width: 320px;
+    	}
+    	.uptxt{
+    		margin: 30px 0;
+    		text-align: center;
+    		color: #1f91eb;
+    		font-size: 18px;
+    		font-weight: bold;
+    	}
+    	.updetetial,.updecompany{
+    		width: 60%;
+    		margin: 0 auto;
+    		color: #666666;
+    		font-size: 15px;
+    	}
+    	.updetetial{
+    		line-height: 30px;
+    	}
+    	.updetetialtip{
+    		margin-bottom: 20px;
+    	}
+    	.updecompany{
+    		margin-top: 50px;
+    		text-align: right;
+    	}
+    </style>
+</head>
+<body>
+	<div class="updeoutbox">
+		<div class="updeinbox">
+		    <div>
+		    	<img src="images/systemUpgrade.png">
+		    	<p class="uptxt">系统升级中....</p>
+		    	<div class="updetetial">
+		    		<p class="updetetialtip">尊敬的用户：</p>
+		    		<p>为了给您提供更优质、完善的服务，我公司拟于4月22日13:30~18:00对系统进行升级维护，期间您可能无法正常使用租电商户平台，（用户在微信小程序，支付宝生活号的租借功能不受影响）由此给您带来的不便，敬请谅解！</p> 		
+		    	</div>
+		    	<div class="updecompany">
+		    		<p>深圳市租电智能科技有限公司</p>
+		    		<p>2019年4月20日</p>
+		    	</div>
+		    </div>
+	    </div>
+    </div>
+</body>
+</html>

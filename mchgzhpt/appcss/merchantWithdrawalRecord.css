@@ -1,0 +1,68 @@
+@charset "utf-8";
+.seachbox{
+    position: relative;
+    background: #ddd;
+    padding: .2rem .3rem;
+    overflow: hidden;
+}
+.seachbox span{
+    float: left;
+    font-size: .3rem;
+    margin: 0 1%;
+    height: .6rem;
+    line-height: .6rem;
+}
+.seachbox input{
+    float: left;
+    height: .6rem;
+    line-height: .6rem;
+
+}
+.seachbox .datetime{
+    float: left;
+    width: 32%;
+    background: #fff url(../img/time.png) no-repeat 90% 50%;
+    background-size: 15%;
+    font-size: 12px; 
+    text-indent: 10px;
+}
+.seachbox .search{
+    float: right;
+    width: 17%;
+    height: .6rem;
+    line-height: .6rem;
+    background: #41a9f9;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+.record-box{
+    padding: .1rem 4%;
+    background-color: #fff;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: .2rem;
+    overflow: hidden;
+}
+
+.record-box .recorddetalin{
+    float: left;
+    width: 50%;
+    height: .76rem;
+    line-height: .76rem;
+    font-size:.28rem;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+.record-box .time{
+    width: 100%;
+}
+.tixianzhong{
+    color: #04ce04;
+}
+.tixianshibai{
+    color: red;
+}
+.tixianwancheng{
+    color: #00abff;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<title>插槽运维管理</title>
+	<script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+	<style type="text/css">
+		body{
+			background: #f5f5f5;
+		}
+		.devicelist{
+			border-bottom: 1px solid #f2f2f2;
+			margin-bottom: .2rem;
+			background: #fff;
+		}
+		.devicelistcont{
+			min-height: 3rem;
+			padding: .2rem;
+			font-size: .28rem;
+			color: #5f5c5c;
+		}
+		.showcharger{
+		    font-size: 0;
+		    width: 100%;
+		    margin: 0 auto;
+		}
+		.chargertit{
+			font-weight: bold;
+		}
+		.showcharger li{
+			margin: .2rem 0;
+		    text-align: left;
+		    font-size: .28rem;
+		    height: .5rem;
+		    line-height: .5rem;
+		    overflow: hidden;
+		}
+		.showcharger li button{
+			display: inline-block;
+		    float: right;
+		    width: 15%;
+		    background: #fff;
+		    border: 1px solid #36a3fe;
+		    color: #36a3fe;
+		    outline: none;
+		}
+		.showcharger li button:disabled{
+			background: #ddd;
+			color: #999;
+			border: 1px solid #ddd;
+		}
+		.showcharger span{
+			float: left;
+			width: 15%;
+			text-align: center;
+		}
+		.showcharger .chacao{
+			width: 10%;
+		}
+		.showcharger .chargeridw{
+			width: 25%;
+		}
+		.showcharger .jiechuzhuangtai{
+			width: 20%;
+		}
+		.notice{
+			margin: .4rem 0 .2rem;
+		}
+		.notice span{
+			color: #f00;
+		}
+		.showchargerbtnbox{
+			display: flex;
+		    height: 0.9rem;
+		    font-size: 0.26rem;
+		    color: #484848;
+		    border-top: 1px solid #f2f2f2;
+		}
+		.showchargerbtn{
+		    flex: 1;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    border: none;
+		    border-right: 1px solid #f2f2f2;
+		    background: #fff;
+		    outline: none;
+		    color: #36a3fe;
+		}
+		.showchargerbtn:disabled{
+			background: #ddd;
+			color: #999;
+		}
+		.nochargershow{
+			width: 100%;
+			height: 3rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			color: #959595;
+		}
+		.nochargershow .weitongdian{
+			color: #f00;
+			font-size: .32rem;
+			margin-bottom: .3rem;
+		}
+		/*弹窗star*/
+			.layermodal{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(55,55,55,.6);
+				color: #515a6e;
+			}
+			.layermodalcontent{
+				width: 78%;
+				padding: 16px;
+			    font-size: 12px;
+			    line-height: 1.5;
+				background: #fff;
+				box-shadow: 0 4px 12px rgba(0,0,0,.15);
+			}
+			.layermodalcontent-head{
+
+			}
+			.layermodalcontent-head-icon{
+				display: inline-block;
+			    font-size: .5rem;
+				color: #f90;
+			    vertical-align: middle;
+			}
+			.layermodalcontent-head-title{
+				display: inline-block;
+			    vertical-align: middle;
+			    margin-left: .2rem;
+			    font-size: .3rem;
+			    color: #17233d;
+			    font-weight: 700;
+			}
+			.layermodalcontent-body{
+				margin: .20rem 0 .15rem;
+    			font-size: .28rem;
+    			padding-left: .8rem;
+			}
+			.layermodalcontent-footer{
+				margin-top: .2rem;
+    			text-align: right;
+			}
+			.layermodalcontent-footer-btn{
+				padding: 6px 15px;
+			    font-size: 14px;
+			    border-radius: 4px;
+			    background-color: transparent;
+    			border-color: transparent;
+    			outline: none;
+    			border: 1px solid #f2f2f2;
+			}
+			.layermodalcontent-footer-btn:active{
+				outline: 0;
+				color: #666;
+			}
+			.layermodalcontent-footer-primary{
+				color: #fff;
+			    background-color: #2d8cf0;
+			}
+			.layermodalcontent-footer-primary:active {
+			    background-color: #2b85e4;
+			    color: #fff;
+			}
+		/*弹窗end*/
+
+	</style>	
+</head>
+<body>
+	<script>reset();</script>
+	<div class="adddevicebox">
+		<div class="devicelistbox">
+			<div class="devicelist">
+				<div class="devicelistcont">
+						<p class="chargertit">设备现有充电宝详情：</p>
+						<div class="chargerlist">
+							<!-- <div class="nochargershow">
+									<div>
+										<p class="weitongdian">系统检测出您的设备暂无充电宝！</p>
+									</div>
+								</div> -->
+							<ul class="showcharger">
+								<li>
+									<span class="chacao">插槽</span>
+									<span>状态</span>
+									<span class="chargeridw">充电宝ID</span>
+									<span>电量</span>
+									<span class="jiechuzhuangtai">借出状态</span>
+								</li>
+								<li>
+									<span class="chacao">1</span>
+									<span>正常</span>
+									<span class="chargeridw">23459889000</span>
+									<span>80%</span>
+									<span class="jiechuzhuangtai">已借出</span>
+									<button>弹出</button>
+								</li>
+								<li>
+									<span class="chacao">2</span>
+									<span>正常</span>
+									<span class="chargeridw">23459889000</span>
+									<span>20%</span>
+									<span class="jiechuzhuangtai">待借出</span>
+									<button>弹出</button>
+								</li>
+							</ul>
+							<div class="notice">注：<span>红色</span>代表其他代理商的充电宝</div>
+						</div>
+					
+				</div>
+				<div class="showchargerbtnbox">
+					<button class="showchargerbtn">弹出所有充电宝</button>
+				</div>
+			</div>
+			<div class="devicelist">
+				<div class="devicelistcont">
+						<p class="chargertit">已借出充电宝，充电宝未归还回原设备：</p>
+						<div class="chargerlist">
+							<ul class="showcharger">
+								<li>
+									充电宝ID：23459889000
+								</li>
+								<li>
+									借出时间：2019-02-122：00：00
+								</li>
+								<li>
+									是否归还：未归还
+								</li>
+								<li>
+									归还设备ID：23459889000
+								</li>
+							</ul>
+							
+						</div>
+				</div>
+				
+			</div>		
+		</div>
+	</div>
+	<!-- <div class="layermodal">
+		<div class="layermodalcontent">
+			<div class="layermodalcontent-head">
+				<div class="layermodalcontent-head-icon iconfont icon-tixing"></div>
+				<div class="layermodalcontent-head-title">重新识别提醒</div>
+			</div>
+			<div class="layermodalcontent-body">您确定要对该设备进行充电宝重新识别吗？</div>
+			<div class="layermodalcontent-footer">
+				<button class="layermodalcontent-footer-btn layermodalcontent-footer-cancel">取消</button>
+				<button class="layermodalcontent-footer-btn layermodalcontent-footer-primary">确定</button>
+			</div>
+		</div>
+	</div> -->
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	
+</body>
+</html>

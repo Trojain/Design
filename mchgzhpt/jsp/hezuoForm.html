@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商家合作表单</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<script src="../js/reset.js"></script>
+	<link href="../css/reset.css" rel="stylesheet">
+	<style type="text/css">
+  	.merchantCooperation
+	    {
+	    	min-height :603px;
+		    background: #f5f5f5;
+		    padding :10px 10px;
+		    display :flex;
+		    flex-direction :column;
+		}
+    .applyInfo
+      {
+      	flex :1;
+	      background :#fff;
+	      border-radius :5px;
+	      padding :0 15px 15px 15px;
+	  }
+	  .info-list {
+	  	padding-top: 10px;
+	  }
+	  .info-list li .info-title,
+	  .info-list li .infotype,
+	  .info-list li .info-phone{
+	  		font-size :14px;
+            color :#444;
+            min-height :42px;
+            line-height :42px;
+	  }
+		.info-list li .info-title i,
+	  	.info-list li .infotype i,
+	  	.info-list li .info-phone i{
+	  		color:#ff0404;
+	      font-style :normal;
+	  	}
+
+		.info-list li .info-title .radioType,
+	  	.info-list li .infotype .radioType,
+	  	.info-list li .info-phone .radioType{
+	  		color :#02a8fe;
+              display :inline-block;
+              margin-right :40px;
+	  	}
+		.info-list li .info-title .mesInput,
+	  	.info-list li .infotype .mesInput,
+	  	.info-list li .info-phone .mesInput{
+	  		 line-height :40px;
+              outline :none;
+              width :160px;
+              border :1px solid #36a3ff;
+              color :#959595;
+              padding-left :10px;
+              margin-right :20px;
+	  	}
+	  	.info-list li .info-title .mesBtn,
+	  	.info-list li .infotype .mesBtn,
+	  	.info-list li .info-phone .mesBtn{
+	  		  display :inline-block;
+              line-height :40px;
+              min-width :80px;
+              text-align :center;
+              background :#d2f4fd;
+              color :#02a8fe;
+              border-radius :4px;
+              padding :0 5px;
+	  	}
+	  	.info-list li .info-title .nomInput,
+	  	.info-list li .infotype .nomInput,
+	  	.info-list li .info-phone .nomInput{
+	  		  height:40px;
+              outline :none;
+              color :#959595;
+              padding-left :10px;
+	  	}
+		.info-list li .info-title{
+			border :1px solid #36a3ff;
+            border-radius :5px;
+		}
+		.info-list li .address{
+			height :20px;
+            font-size :16px;
+            line-height :20px;
+		}
+		.info-list li .address i{
+			color:#ff0404;
+              font-style :normal;
+		}
+		.info-list li .distpicker{
+			width:100%;
+            display: flex;
+            height: 44px;
+            padding-top: 15px;
+		}
+		.info-list li .distpicker select{
+			flex:1;
+	          margin: 0 5px;
+	          height: 80%;
+	          border-radius: 3px;
+	          outline: none;
+	          width: 33%;
+	          border: 1px solid #36a3ff;
+	          appearance: none;
+	          -moz-appearance: none;
+	          -webkit-appearance: none;
+	          background: url('./select.png') right no-repeat;
+	          background-size: 60px 20px;
+		}
+		.info-list li .remarkCom{
+			height:162px;
+            border-radius:3px;
+            font-size :14px;
+            border: 1px solid #36a3ff;
+            position :relative;
+		}
+		.info-list li .remarkCom .textNum{
+			position :absolute;
+              right:0;;
+		}
+		.info-list li .remarkCom .textArea{
+			height :100%;
+              width :100%;
+		}
+		.info-list li .button-con{
+            height :45px;
+            line-height :45px;
+            text-align :center;
+            width :160px;
+            color :#fff;
+            font-size :15px;
+            background :#36a3ff;
+            border-radius :20px;
+            margin: 50px auto;
+        }
+	</style>
+</head>
+<body>
+	<div class="merchantCooperation" ref="merchantCooperationPage">
+      <div class="applyInfo">
+        <ul class="info-list">
+        <!--   <li>
+            <p style="margin-bottom:10px; " class="infotype"><i>*</i>合作模式:<input style="margin-left: 5px;" v-model="user.applyType" id="t1" value="3"  type="radio"> <label for="t1"  class="radioType">合伙人</label> <input type="radio" id="t2" value="4" v-model="user.applyType"> <label style="margin-right: 0;" for="t2" class="radioType">商户</label> </p>
+          </li> -->
+          <li>
+          <p style="margin-bottom:25px; " class="info-title"><i>*</i>联系人: <input class="nomInput" maxlength="10" type="text" v-model="user.userName"  placeholder="请输入联系人"></p>
+          </li>
+          <li>
+            <p style="margin-bottom:8px; " class="info-title"><i>*</i>电话:
+              <input class="nomInput" type="text" v-model="user.phone" placeholder="请输入联系电话">
+            </p>
+            <p style="display: flex;" class="info-phone"><input type="text" class="mesInput" v-model="user.phoneCode" placeholder="请输入短信验证码"><span @click="getCode" class="mesBtn">获取验证码</span></p>
+          </li>
+          <li style="margin:10px 0;">
+            <p  class="address"><i>*</i>意向合作区域: </p>
+            <div class="distpicker">
+              <select  name='province' id="province">
+                <option disabled  value=''>请选择省</option>
+              </select>
+              <select name='city' id="city">
+                <option disabled  value=''>请选择市</option>
+              </select>
+              <select name='zone' id="zone">
+                <option disabled  value=''>请选择区</option>
+              </select>
+            </div>
+          </li>
+          <li style="margin:10px 0;">
+            <p  class="address"><i>*</i>商户类型: </p>
+            <div class="distpicker">
+              <select  name='province' id="province">
+                <option disabled  value=''>请选择商户类型</option>
+              </select>
+            </div>
+          </li>
+          <li style="margin:10px 0;">
+            <p  class="address"><i>*</i>店面数量: </p>
+            <div class="distpicker">
+              <select  name='province' id="province">
+                <option disabled  value=''>请选择店面数量</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <p class="address"><i>*</i>备注:</p>
+            <div class="remarkCom">
+              <textarea class="textArea" rows="4" cols="50"  maxlength="150" v-model="user.remark"  placeholder="请输入备注"></textarea>
+            </div>
+          </li>
+          <li>
+            <p @click="postData" class="button-con">提交</p>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+</body>
+</html>

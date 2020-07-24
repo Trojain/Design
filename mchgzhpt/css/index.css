@@ -1,0 +1,408 @@
+/* --------------------------------------------- 公用样式 --------------------------------------------- */
+body {
+    font-size: .28rem;
+    background: #f2f2f2;
+}
+
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+a {
+    color: #353535;
+}
+
+.fl,
+.left {
+    float: left;
+}
+
+.fr,
+.right {
+    float: right;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex_item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+.cell_box {
+    background: #fff;
+}
+
+.cell_item {
+    padding: .2rem .3rem;
+    display: flex;
+    line-height: .4rem;
+}
+
+.cell_left {
+    width: 1.5rem;
+    color: #000;
+}
+
+.cell_right {
+    color: #666;
+    flex: 1;
+    text-align: right;
+    font-size: .24rem;
+}
+
+.cell_right:before {
+    float: right;
+    margin-left: .2rem;
+}
+
+.btn {
+    font-size: .3rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #666;
+}
+
+.primary-btn {
+    font-size: .3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #36A3FF;
+    color: #fff;
+}
+
+.fixed-btn {
+    width: 80%;
+    padding: .1rem;
+    position: fixed;
+    bottom: 2%;
+    left: 10%;
+}
+
+.asterisk {
+    color: red;
+    margin-right: 10rpx;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+/* 弹框 */
+.dialog-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.dialog-mask {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-modal {
+    position: fixed;
+    z-index: 9999;
+    width: 80%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    text-align: center;
+    border-radius: .1rem;
+    overflow: hidden;
+    padding: .5rem .3rem;
+}
+
+.dialog-modal .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #36A3FF;
+    width: 0.6rem;
+    height: 0.6rem;
+    line-height: .6rem;
+    font-size: 0.36rem;
+}
+
+.navigator-box img {
+    width: 1rem;
+}
+
+/* 下拉框 */
+.select-box {
+    position: relative;
+    display: inline-block;
+}
+
+.select-box .iconfont {
+    position: absolute;
+    right: .1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: .26rem;
+}
+
+.select-box .select {
+    border: 1px solid #ddd;
+    padding: .1rem .4rem .1rem .2rem;
+    max-width: 3rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+/* --------------------------------------------- 工作台 --------------------------------------------- */
+.workbench {
+    background-color: #e1eef8;
+    font-size: .3rem;
+    padding-bottom: .3rem;
+}
+
+.workbench .header {
+    padding: 0 .2rem;
+    background: url("http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/head-img.png") center top no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+.workbench .header a {
+    color: #fff;
+}
+
+.workbench .header .title {
+    height: .84rem;
+    line-height: .84rem;
+}
+
+.workbench .header .iconfont {
+    margin-left: .10rem;
+    font-size: .28rem;
+}
+
+.workbench .header .time {
+    font-size: .24rem;
+}
+
+.workbench .header .statistic {
+    padding: 0 .3rem;
+    text-align: center;
+}
+
+.workbench .header .swiper-container {
+    height: 2.9rem;
+}
+
+.workbench .header .tabs .part {
+    height: .9rem;
+    line-height: .9rem;
+    display: inline-block;
+    margin: 0 .4rem;
+    color: #fff;
+}
+
+.workbench .header .tabs .active {
+    font-size: .4rem;
+    border-bottom: .05rem solid #fff;
+
+}
+
+.workbench .header .swiper-wrapper {
+    padding: .3rem 0 .5rem
+}
+
+.workbench .header .swiper-wrapper b {
+    font-size: .5rem;
+    display: block;
+}
+
+.workbench .header .swiper-wrapper p {
+    font-size: .26rem;
+}
+
+.workbench .container {
+    position: relative;
+    z-index: 1;
+    top: -1rem;
+    margin: 0 .2rem;
+    border-radius: .2rem;
+    background: #fff;
+    padding: 0 .24rem;
+}
+
+.workbench .container .item {
+    text-align: center;
+    padding-bottom: .2rem;
+}
+
+.workbench .container .title {
+    color: #353535;
+    font-size: .3rem;
+    padding-top: .3rem;
+}
+
+.workbench .container .title .fl {
+    padding-left: .2rem;
+    position: relative;
+}
+
+.workbench .container .title .fl::before {
+    content: "";
+    display: inline-block;
+    background: url("http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/title-icon.png") center center no-repeat;
+    width: .06rem;
+    height: .36rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.workbench .container .rotate {
+    transform: rotate(-180deg);
+}
+
+.workbench .container .title .tips {
+    color: #999;
+    font-size: .24rem;
+    margin-left: .2rem;
+}
+
+.workbench .container .float {
+    color: #353535;
+    margin-top: .24rem;
+}
+
+.workbench .container .float-item {
+    width: 25%;
+}
+
+.workbench .container .float .img {
+    width: .7rem;
+    height: .7rem;
+}
+
+.workbench .container .float .tips {
+    font-size: .24rem;
+    white-space: pre-wrap;
+}
+
+.workbench .container .break {
+    line-height: .36rem;
+}
+
+/* --------------------------------------------- 底部 --------------------------------------------- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    font-size: .26rem;
+    background: #fff;
+    width: 100%;
+    text-align: center;
+    padding: .1rem 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer .flex_item {
+    color: #353535;
+}
+
+.footer .active {
+    color: #36A3FF;
+}
+
+.footer img {
+    width: .46rem;
+    height: .46rem;
+}
+
+.footer p {
+    line-height: .4rem;
+}
+
+/* --------------------------------------------- weui --------------------------------------------- */
+/* 开关 */
+.weui-switch {
+    width: .9rem;
+    height: .5rem;
+}
+
+.weui-switch:after {
+    width: .4rem;
+    height: .4rem;
+}
+
+.weui-cells {
+    font-size: .28rem;
+}
+
+/* 强提示 */
+.weui-dialog .weui-dialog__hd {
+    padding: .3rem;
+    font-size: .32rem;
+}
+
+.weui-dialog .weui-dialog__bd {
+    margin: 0;
+    font-size: 0.3rem;
+}
+
+.weui-dialog .weui-dialog__ft {
+    font-size: .32rem;
+}
+
+.weui-dialog .weui-dialog__btn,
+.weui-dialog .weui-dialog__title {
+    font-weight: normal;
+}
+
+/* 弱提示 */
+.weui-toast {
+    width: auto;
+    height: auto;
+    padding: .1rem .4rem;
+    word-break: break-all;
+}

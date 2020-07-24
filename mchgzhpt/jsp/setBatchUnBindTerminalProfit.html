@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>保证金分润设置</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <style type="text/css">
+      .profitbox{
+        padding: .3rem;
+        font-size: .3rem;
+        color: #444;
+      }
+      .profittit{
+        position: relative;
+        margin: .2rem 0;
+        font-size: .32rem;
+        text-indent: .2rem;
+      }
+      .profittit:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: .1rem;
+        width: .1rem;
+        height: .1rem;
+        border-radius: 50%;
+        background: #36a3ff;
+      }
+      .profitlist{
+        margin: .6rem 0;
+        line-height: .42rem;
+      }
+      input[type="radio"]{
+        position: absolute;
+        clip: rect(0,0,0,0);
+      }
+      input[type="radio"] + label::before{
+        content: '';
+        background: #fff;
+        border: 1px solid #36a3ff;
+        width: .28rem;
+        height: .28rem;
+        border-radius: 50%;
+        float: left;
+        margin-right: .2rem;
+        margin-top: .05rem;
+        background-clip: border-box;
+      }
+      input[type="radio"]:checked + label::before{
+        background: #36a3ff;
+        background-clip: content-box;
+        width: .16rem;
+        height: .16rem;
+        padding: .06rem;
+      }
+      .button{
+         position: fixed;
+         bottom: 0.3rem;
+         left: 0;
+         height: .9rem;
+         line-height:.9rem;
+         width: 100%;
+         padding: 0 .3rem;
+         text-align: center;
+         font-size: .3rem;
+         color: #fff;
+        }
+        .button span{
+         display: block;
+         background: #36A3FE;
+         height: 100%;
+         width: 100%;
+         border-radius:5px;
+         }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="profitbox">
+      <div class="profittit">分润规则</div>
+      <div class="profitlist"><input type="radio" name="profit" id="profit1"><label for="profit1">分润规则1</label></div>     
+      <div class="profitlist"><input type="radio" name="profit" id="profit2"><label for="profit2">分润规则1</label></div>
+      <div class="profitlist"><input type="radio" name="profit" id="profit3"><label for="profit3">分润规则1</label></div>
+    </div>
+    <select id="test">
+      <option data-text = "text">1</option>
+      <option data-text = "text">2</option>
+      <option data-text = "text">3</option>
+      <option data-text = "text">4</option>
+    <input id="cb" type="checkbox" checked="checked">
+    </select>
+
+    <div class="button" id="button"><span>提交</span></div>
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+     $('#test').change(function() {
+      console.log($(this).find("option:selected").data('text'));
+     console.log($('#cb').is(":checked")) 
+})
+    </script>
+</body>
+</html>

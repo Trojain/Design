@@ -1,0 +1,298 @@
+<style type="text/css">
+  .select-con{
+   
+  }
+  .select-con .tab{
+   display: flex;
+  }
+  .select-con .tab .active{
+     flex:0 0 2.77rem;
+     height:1rem;
+     width: 2.77rem;
+     font-size: 0.28rem;
+     color: #444;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+  .select-con .tab .tab-left{
+    flex:1;
+    height:1rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem .2rem;
+  }
+  .tab-left .left-com{
+    display:flex;
+    background: #f2f2f2;
+    border-radius:20px;
+    width: 100%;
+    height: 100%;
+    font-size: .26rem;
+    color: #BFC0C1;
+  }
+  .tab-left .iconScan{
+   flex:0 0 1rem;
+   width: 1rem;
+   line-height: .6rem;
+   text-align: center;
+  }
+  .tab-left .iconSearch{
+   flex:1;
+   border-right: 1px solid #E4E5E9;
+   line-height: .6rem;
+   text-align: center;
+  }
+  
+  .row{
+        display: inline-block;
+        vertical-align: middle;
+        border :5px solid transparent;
+        border-top-color :#ccc;
+        margin : 5px 0 0 5px;
+        transition : all .4s linear;
+        transform-origin :center 2px;
+  }
+  .icon-scan,.search-icon{
+   display: inline-block;
+   height: 0.32rem;
+   width: 0.32rem;
+   vertical-align: text-bottom;
+  }
+  .icon-scan{
+    background: url("../../..//mchgzhpt/img/merchantcenter/sm.png") no-repeat;
+    background-size:100%; 
+  }
+  .search-icon{
+    background: url("../../..//mchgzhpt/img/merchantcenter/ss.png") no-repeat;
+    background-size:100%; 
+    vertical-align: text-bottom;
+    margin-right: 5px;
+  }
+  .seachbox{
+   display: none;
+  }
+  .shade{
+   position: absolute;
+   top:1rem;
+   width:100%;
+   bottom: 0;
+   background: rgba(0,0,0,.5);
+   display: none;
+   z-index:100;
+  }
+  .online,.grounding{
+   background: #fff;
+   display: none
+  }
+  .online .gou,.grounding .gou{
+   display: inline-block;
+   height: .28rem;
+   width: .28rem;
+   background: url("../../..//mchgzhpt/img/merchantcenter/gou.png") no-repeat;
+   background-size:100%; 
+   float: right;
+   margin: .3rem .5rem 0 0;
+   visibility: hidden;
+  }
+  .seected{
+  visibility: visible !important;
+  }
+  .blueText{
+   color: #36a3ff !important;
+  }
+ .search-con{
+   display: flex;
+   font-size: .28rem;
+   padding:.15rem 0 .15rem .5rem;
+ }
+ .search-con form{
+  flex:1;
+  border-radius:10px;
+  background: #f2f2f2;
+  padding-left: .15rem;
+ }
+ #deviceId,#chargeId{
+  height:0.65rem;
+  background: #f2f2f2;
+  outline: none;
+  border: none;
+  width: 90%;
+ }
+ #deviceId{
+  border-bottom: 1px solid #fff;
+ }
+ #search{
+  flex:0 0 1rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+ }
+  .online p,.grounding p{
+   height: .9rem;
+   line-height: .9rem;
+   font-size: .28rem;
+   padding-left: .4rem;
+  }
+  .dev-list{
+   background: #f2f2f2;
+   padding: 0 .2rem 0 .2rem;
+  }
+  .num{
+   font-size: .26rem;
+   color: #959595;
+   padding: .15rem 0 .2rem .3rem;
+   background: #f2f2f2;s
+  }
+  .devinfor{
+	position: relative;
+    padding: .3rem .3rem 0 .3rem; 
+    line-height: .42rem;
+    background-color: white;
+    border-bottom: .01rem solid #ddd;
+    overflow: hidden;
+    margin-bottom: .2rem;
+}
+.devinfor .gorow{
+ display: inline-block;
+ height:.6rem;
+ width:.6rem;
+ background:url("../../..//mchgzhpt/img/merchantcenter/row.png") no-repeat;
+ background-size:100%;
+ position: absolute;
+ right: .3rem;
+ top:37%;
+}
+.devinfor h2{
+    padding-bottom: .1rem;   
+    font-weight: bold;
+    font-size: .3rem;
+    color:#484848;
+    border-bottom: 1px solid #f2f2f2; 
+}
+.devinfor h2 .isOn13,.devinfor h2 .isOn10,.devinfor h2 .isOn16{
+ display: inline-block;
+ font-size:.24rem;
+ margin-right: .15rem;
+ padding:0 .1rem;
+ border-radius:3px;
+}
+.isOn13{
+color:#F2ACAC;border: 1px solid #F2ACAC;
+}
+.isOn10{
+color:#22ac38;border: 1px solid #22ac38;
+}
+.isOn16{
+color:#36a3ff;border: 1px solid #36a3ff;
+}
+.devinfor h2 .set{
+ float: right;
+}
+.devinfor p{   
+    margin-bottom: .1rem;
+    font-size: 13px; 
+}
+.devinfor .adress{
+    margin-bottom: 0;
+    color:#999;
+}
+.devinfor p{
+font-size:.26rem;
+color: #484848;
+}
+ .devinfor .collectType{
+  display: flex;
+ }
+ .devinfor .collectType span{
+  flex:0 0 1.9rem;
+  width: 1.9rem;
+ }
+ .devinfor .collectType i{
+  flex:1;
+  font-style: normal;
+ }
+.devinfor .phone a{color: #36a3ff;}
+.devinfor p span{
+    display:inline-block;
+    width:1.9rem;
+    color: #959595;
+}
+.devinfor .devinforbtn{
+height: 0.9rem;
+font-size:0.26rem;
+color: #484848;
+border-top: 1px solid #f2f2f2;
+}
+.devinfor .devinforbtn{
+ display: flex;
+}
+.devinfor .devinforbtn a{
+ flex:1;
+ }
+.tradeNum{
+ flex:1;
+ display: flex;
+ align-items: center;
+  justify-content: center;
+  border-right: 1px solid #f2f2f2;
+}
+.onlineNum{
+ flex:1;
+ display:flex;
+ align-items: center;
+  justify-content: center;
+}
+#more{
+    display: block;
+    height: .5rem;
+    line-height: .5rem;
+    text-align: center;
+    font-size: .28rem;
+    }
+    .prompt1{
+    z-index: 1000;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.prompt-cont1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -40%;
+    width: 80%;
+    margin-top: -64px;
+    font-size: 14px;
+    margin-top: -3.5rem;
+    padding:.55rem .3rem .3rem .5rem;
+    font-size: .3rem;
+    background: #fff;
+    color: #333;
+    border-radius:3px; 
+}
+.tip-header1{
+ font-size: .26rem;
+ color: #959595;
+}
+.promt-list1 li{
+height: .95rem;
+line-height: .95rem;
+font-size: .3rem;
+color: #444;
+}
+.promptBtn1{
+ text-align: center;
+ color: #36a3ff;
+}
+.load-com{
+ display: none;
+}
+</style>	   

@@ -1,0 +1,177 @@
+/*20191026*/
+
+.bannerimg{
+    height: 27%;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff url(../images/password01.gif) no-repeat center;
+    background-size: auto 100%;
+    box-shadow: 0 .08rem .10rem rgba(0,49,122,.16);
+}
+.maincontentbox{
+    position: relative;
+    height: 62%;
+    margin-top: 4%;
+}
+.maincontentbox .tiptext{
+    margin: 0 auto .2rem;
+    width: 80%;
+    text-align: center;
+    line-height: .4rem;
+}
+.passwordoutbox{
+    margin: 8% auto 6%;
+}
+.fivecode,.sixcode{
+    text-align: center;
+}
+.fivecode li,.sixcode li{
+    display: inline-block;    
+    margin: 0 .08rem;
+    font-weight: bolder;
+    font-family: 'Hiragino Sans GB';
+    border-radius: .1rem;
+    background: #36a3ff;
+    color: #fff;
+    font-size: .72rem;
+    text-align: center;
+}
+.sixcode li{
+    width: .90rem;
+    height: .90rem;
+    line-height: .90rem;
+}
+.fivecode li{
+    width: 1.0rem;
+    height: 1.0rem;
+    line-height: 1.0rem;
+}
+.oparotitle{
+    height: .9rem;
+}
+.cannotcharching{
+    position: absolute;
+    bottom: 6%;
+    width: 100%;
+    color: #36a3ff;
+    font-size: .35rem;
+    text-align: center;
+    
+}
+.cannotcharching i{
+    font-size: .4rem;
+}
+.cannotcharching span{
+    text-decoration: underline;
+}
+
+/*使用中页面*/
+
+.feescaletit{
+    font-size: .32rem;
+}
+.costtit{
+  padding: 0 .30rem;
+  height: 22.84%;
+  font-size: .32rem;
+  color: #323232;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.costtit i{
+  margin-right: .20rem;
+  font-size: .42rem;
+  color: #36a3ff;
+}
+.costmain{
+  display: flex;
+  align-items: center;
+  margin: 0 .30rem;
+  height: .8rem;
+  font-size: .30rem;
+  background: #fff;
+  border-bottom: 1px solid #bfbfbf;
+}
+.costmainflex{
+  width: 100%;
+}
+.costmain span{
+  float: right;
+}
+.useingpagebtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    font-size: .4rem;
+    color: #fff;
+    height: 1.11rem;
+    line-height: 1.11rem;
+    bottom: 5%;
+}
+.useingpagebtn .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 4.60rem;
+    background: #36a3ff;
+    box-shadow: inset 0 0.04rem 0.10rem rgba(223,249,254,.4),0 0.08rem 0.15rem rgba(0,49,122,.3);
+    border-radius: .2rem;
+    margin: 0 auto;
+    
+}
+.useingpagebtn .btnl,
+.useingpagebtn .btnr{
+    width: 48%;
+}
+.useingpagebtn .btnl{
+    border-radius: .20rem 0 0 .20rem;
+}
+.useingpagebtn .btnr{
+    border-radius: 0 .20rem .20rem 0;
+}
+/*归还成功*/
+.costdetailpage .useingpagebtn{
+    position: relative;
+    margin-top: .7rem;
+}
+.tuikuan{
+    position: absolute;
+    width: 100%;
+    bottom: 6%;
+    text-align: center;
+}
+.howtuikuan{
+    margin-bottom: .3rem;
+    color: #36a3ff;
+    font-size: .35rem;
+}
+.howtuikuan span{
+    text-decoration: underline;
+}
+.checkresult{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    text-align: center;
+    height: 27%;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 .08rem .10rem rgba(0,49,122,.16);
+}
+.checkresult img{
+  display: block;
+  width: 2.18rem;
+  height: 1.65rem;
+  margin: 0 auto .18rem;
+}
+.checkresulttip{
+  margin-bottom: .1rem;
+  font-size: .32rem;
+  color: #65abfd;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提现申请</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+    <link href="../appcss/merchantWithdraw.css" rel="stylesheet">
+</head>
+<body>
+    <script>reset();</script>
+    <div class="withdraw">
+        <div class="withdrawinfo">
+            <h3 class="moneytit">提现金额</h3>
+            <div class="howmoney"><b>￥</b><input id="inputMoney" type="number"  autofocus="autofocus"></div>        
+            <div id="canwithdraw" class="canwithdraw">可提现金额￥<b id="allMoney">400000.00</b>，<span id="withdrawAll">全部提现</span>
+                <p class="canwithdraw">（每笔提现额度：50元~2万元）</p>
+            </div>           
+            <div id="withdrawtip" class="withdrawtip">输入金额超过可提现余额</div>          
+        </div>
+        <div class="withdrawway">
+            <div class="withdrawwayint">提现方式<a class="iconfont icon-wenhao" href="http://www.gerensuodeshui.cn/index_lwbc.html"></a></div>
+            <div class="withdrawwayint"><input id="killOrder1" type="radio" name="withdrawway" checked><label for="killOrder1">20个工作日到账</label></div>
+            <div class="withdrawwayint"><input id="killOrder2" type="radio" name="withdrawway"><label for="killOrder2">实时到账</label></div>
+        </div>
+        <div class="withdrawkoufei">
+            <div class="withdrawwayint">提现手续费<div class="paymoney"><span>0</span>元</div></div>
+            <div class="withdrawwayint">支付手续费<div class="paymoney"><span>0</span>元</div></div>
+            <div class="withdrawwayint">实际到账（含税）<div class="paymoney"><span>0</span>元</div></div>
+        </div>
+        <button id="canwithdrawBtn" class="canwithdraw-btn" disabled="true">提现</button> 
+    </div>    
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            $("#inputMoney").focus();
+        });
+        merchantWithdraw();
+        function merchantWithdraw(){
+            function disableButton(id){
+                $(id).css("opacity",".5");
+                $(id).attr("disabled",true);
+            }
+            function ableButton(id){
+                $(id).css("opacity","1");
+                $(id).attr("disabled",false);
+            }
+            var canwithdrawBtn = $("#canwithdrawBtn");            
+            var allMoneyTxt = Number($("#allMoney").text());
+
+            $("#withdrawAll").click(function(){
+                if (allMoneyTxt>20000) {
+                    $("#canwithdraw").hide();
+                    $("#withdrawtip").show();
+                    $("#withdrawtip").text("根据微信官方规定，单笔提现金额不能大于2万");
+                    $("#inputMoney").val(20000);
+                }else{
+                    $("#inputMoney").val($("#allMoney").text());
+                }              
+                ableButton(canwithdrawBtn);
+            });
+            $('#inputMoney').bind('input propertychange', function() {
+                var rex=/^\d+$/g;
+                var inputMoneyVal = Number($.trim($("#inputMoney").val()));
+                if(rex.test(inputMoneyVal) && inputMoneyVal > 0 && inputMoneyVal <=20000){
+                    if (inputMoneyVal <= allMoneyTxt) {
+                        ableButton(canwithdrawBtn);
+                        $("#canwithdraw").show();
+                        $("#withdrawtip").hide();                  
+                    }else{
+                        disableButton(canwithdrawBtn);
+                        $("#canwithdraw").hide();
+                        $("#withdrawtip").show();
+                        $("#withdrawtip").text("输入金额超过可提现余额");
+                    }
+                }else if(inputMoneyVal > 20000){
+                    $("#inputMoney").val(20000);
+                    $("#withdrawtip").show();
+                    $("#withdrawtip").text("根据微信官方规定，单笔提现金额不能大于2万");
+                    $("#canwithdraw").hide();
+                    ableButton(canwithdrawBtn);
+                }else{
+                    $("#withdrawtip").show();
+                    $("#withdrawtip").text("请输入小于20000的正整数");
+                    $("#canwithdraw").hide();
+                    disableButton(canwithdrawBtn);
+                } 
+            });
+            $("#canwithdrawBtn").click(function(){
+                var inputMoney = Number($.trim($("#inputMoney").val()));
+                var merchantId = $.trim($("#merchantId").val());
+                var openId = $.trim($("#openId").val());
+                $("#messageDialogProcess").show();          
+                $.JsonRpc(
+                "",
+                new dataArea('usercenter', 'insertWithdrawApplyRecord', 
+                        {merchantId:merchantId,preTaxAmount:inputMoney,openId:openId}
+                ),
+                function(data){
+                    $("#messageDialogProcess").hide();
+                    if(data.result=="success"){
+                        $("#result_prompt").text(data.message);                         
+                    }else{
+                        $("#result_prompt").text(data.message); 
+                    }
+                    $("#messageDialog").show();
+                    $("#msg_btn").click(function(){
+                        
+                    });
+                }); 
+            });    
+        }
+    </script>
+</body>
+</html>

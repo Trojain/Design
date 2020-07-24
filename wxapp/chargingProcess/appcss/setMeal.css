@@ -1,0 +1,127 @@
+body{
+	background: #eef3f4;
+}
+.banner{
+    background: url(../img/meal.png),
+ -webkit-linear-gradient(top, #36a3ff, #1dc2ff);
+    background-image: url(../img/meal.png),
+ linear-gradient(top, #36a3ff, #1dc2ff);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: auto 100%;
+}
+/*套餐*/
+.meal{
+	display: flex;
+    align-items: center;
+	height: 33%;
+}
+.mealflex{
+	width: 100%;
+	height: 90%;
+}
+.meallist{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 33%;
+	overflow: hidden;
+}
+.meallistflex{
+	position: relative;
+    height: 80%;
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: .32rem;
+    color: #282828;
+    border: 1px solid #fff;
+    box-shadow: 0 0 .2rem rgba(2,121,209,.05);
+}
+.meallistflex.active {
+	border: 1px solid #36a3ff;
+	color: #36a3ff;
+	box-shadow: 0 .05rem .1rem rgba(2,121,209,.14);
+}
+.lentbtnbox{
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	height: 12.13%;
+}
+.lentbtn{
+	width: 70%;
+	background: #30a4ff;
+    border-radius: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    margin: 0 auto;
+    font-size: .32rem;
+    background:-webkit-linear-gradient(left, #36a3ff, #1d87ff);
+    box-shadow: 0 .1rem .1rem rgba(54,163,255,.3);
+}
+.oparostep{
+	display: flex;
+    align-items: center;
+	width: 70%;
+	height: 30%;
+	margin: 0 auto;
+	font-size: .30rem;
+	color: #333;
+	margin-top:-.20rem;
+
+}
+.oparotitle{
+	display: flex;
+    align-items: center;
+    height: 25%;
+    width: 100%;
+}
+.oparostepflex{
+	width: 100%;
+	height: 70%;
+}
+.oparotitletext{
+	flex: 1;
+    text-align: center;
+}
+.oparoline{
+    position: relative;
+    height: .02rem;
+    width: 40%;
+    background: #ffd04f;
+    flex: 1;
+	box-shadow: 0 3px 8px rgba(226,169,16,.3);
+}
+.oparoline:after{
+	content: '';
+	position: absolute;
+	top: -.08rem;
+	width: .16rem;
+	height: .16rem;
+	border-radius: 50%;
+	background: #ffd04f;
+	box-shadow: 0 3px 8px rgba(226,169,16,.3);
+}
+.oparolinel:after{
+	right: 0;
+}
+.oparotitleflex{
+	width: 100%;
+    display: flex;
+    align-items: center;
+}
+.oparotext{
+	display: flex;
+    align-items: center;
+	width: 100%;
+	height: 25%;
+}

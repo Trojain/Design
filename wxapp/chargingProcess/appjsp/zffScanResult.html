@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>支付分我要借入</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/offlinecommon.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/scanResult.css">
+</head>
+<body>
+    <script>reset();</script>
+    <div id="scenecontbox" style="height: 100%;">
+    <div id="printbtn" class="homepagebtn"></div>
+    <div class="scenecontbox zff">
+        <div class="paymentstep">
+            <div class="paymentstepflex">
+              <div class='stepdetail stepdetailfirst'>
+                <div class='iconimg'><img src="../images/scaniconimg.png"></div>
+                <div class='steptext'>1.扫插座二维码</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/payiconimg.png"></div>
+                <div class='steptext'>2.支付金额</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/charchingiconimg.png"></div>
+                <div  class='steptext'>3.使用充电</div>
+              </div>            
+              <div class="dotted"></div>
+              <div class='clear'></div>
+            </div>
+        </div>
+
+        <div class="maincontentbox">
+
+            <div class="feescaletitbox">
+                <div class="feescaletitflex">              
+                    <div class="feescaletit feescaletitl"><span></span>计费规则</div>
+                    <div class="feescaletit feescaletitr">使用帮助<i class="iconfont icon-xiala"></i></div> 
+                </div>
+            </div>
+            <div class="feeslistbox">
+                <div class="feeslistboxscroll">  
+                    <p class="feeslist">* 1元/3小时内</p>
+                    <p class="feeslist">* 预存3元，超出3小时扣除全部预存金额</p>
+                    <p class="feeslist">* 预存3元，超出3小时扣除全部预存金额</p>
+                    <p class="feeslist">* 该款项由租电收取，与店家无关</p>
+                </div>
+            </div>
+            <div class="paywayselect active" data-paymoney='1' data-feetimerange='1' onclick="choose(this)">
+                <div class="paywayselectflex">
+                    <div class="selecticon"></div> 
+                    <div>免押金租借 <span class="selecttext">微信支付分550分以上</span></div>
+                </div>
+            </div>
+            <div class="paywayselect" data-paymoney='2' data-feetimerange='2' onclick="choose(this)">
+                <div class="paywayselectflex"> 
+                    <div class="selecticon"></div> 
+                    <div>预付金 ￥58.00</div>
+                </div>
+            </div>            
+            <div class="scanbtn">去支付</div>  
+              <div class='readagreement'>
+                <label class="checkbox">
+                <input type="checkbox"  /> 我已阅读
+                </label>
+                <span>《充电协议》</span> 
+                <!-- <span>《委托扣款授权书》</span> -->
+              </div>                      
+            </div>  
+        <div class="pageadver">
+            <img src="../images/pageadver.png">
+        </div>       
+    </div>
+    <div class="layer" id="memberLayer" style="display: none;">
+        <div class="layercontbox">
+            <div class="memberlogo"><a href=""></a></div>            
+            <div class="membercont">
+                <div style="height: 44.44%;"></div>
+                <div class="memberhuxing"></div>
+                <div class="memberinfo">
+                    <div style="height: 13.14%;"></div>
+                    <p class="p1">租电车充会员</p>
+                    <div style="height: 13.14%;"></div>
+                    <p>* 一年全国免费使用车充设备</p>
+                    <div style="height: 6.14%;"></div>
+                    <p>* 享受租电特权优惠</p>
+                    <div style="height: 6.14%;"></div>                  
+                </div>
+                <div class="round1" style="z-index: 1;"></div>
+                <div class="round2"></div>
+                <div class="round3"></div>
+            </div>
+            <div class="memberbtn">仅需5元 立即办理 ></div>
+            <div class="memberclose"></div>  
+        </div>        
+    </div>
+
+</div>
+    <div class="layer" style="display: none;">
+        <div class="layercontbox">
+            <div class="memberlogo hotelmemberhotel"><a href=""></a></div>            
+            <div class="membercont">
+                <div style="height: 44.44%;"></div>
+                <div class="memberhuxing"></div>
+                <div class="memberinfo">
+                    <div style="height: 13.14%;"></div>
+                    <p class="p1">租电酒店充会员</p>
+                    <div style="height: 13.14%;"></div>
+                    <p class="p2">* 赠送限量老凤祥饰品一个元</p>
+                    <div style="height: 6.14%;"></div>
+                    <p>* 本次充电免费</p>
+                    <div style="height: 6.14%;"></div>
+                    <p>* 一年全国免费使用车充设备</p>                    
+                </div>
+                <div class="round1"></div>
+                <div class="round2"></div>
+                <div class="round3"></div>
+            </div>
+            <div class="memberbtn">仅需10元 立即办理 ></div>
+            <div class="memberclose" id="memberClose"></div>  
+        </div>            
+    </div>    
+    <script src="../../../js/animate.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            var meals = document.querySelectorAll(".paywayselect");
+            for(var i = 0;i<meals.length;i++){
+                var feeTimeRange = meals[i].dataset.feetimerange;
+                if(feeTimeRange == 1){
+                    meals[i].className = "paywayselect active";
+                    break;
+                }
+            }
+        }
+        function choose(obj){
+            var meals = document.querySelectorAll(".paywayselect");
+            for(var i = 0;i<meals.length;i++){
+               meals[i].className = "paywayselect";
+            }
+            obj.className = "paywayselect active";
+            console.log(obj.dataset.paymoney)
+        }
+
+        document.getElementById("memberClose").onclick = function(){
+            document.getElementById("memberLayer").style.display = "none";  
+        }        
+        document.getElementById("submitbBtn").onclick = function(){
+            var regx = /^0?(13|15|17|18|14)[0-9]{9}$|^[0][0][8][5][2]([5|6|9])\d{7}$|^[0][0][8][5][3][6]\d{7}$|^[0][0][8][8][6][0][9]\d{8}$/;
+            var telNo = document.getElementById("telNo").value;
+            if(telNo == ""){
+                alert("请输入手机号码");
+                return;
+            }
+            if(!regx.test(telNo)){
+                alert("输入的手机号格式不正确");
+                return;
+            }  
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+	<title>根据关键词搜索地址集合</title>
+	<style>
+	   * {
+	   	 padding: 0;
+	   	 margin: 0;
+	   	 font-family: "Micrsoft Yahei";
+	   }
+		html,body,#container {
+			width: 100%;
+			height: 100%;
+		}
+		.btnbox{
+			z-index: 2;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 90%;
+			display: flex;
+			justify-content: space-between;
+			color: #fff;
+		}
+		.btnbox .quxiao,.btnbox .queding{
+			border-radius: 5px;
+			padding: 3px 10px;
+		}
+		.btnbox .quxiao{
+			background: #bbb;
+		}
+		.btnbox .queding{
+			background: #399e05;
+			
+		}
+		#container{
+			height: 60%;
+		}
+		#search {
+           	position: fixed;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    height: 40%;
+		    z-index: 99;
+		    font-size: 16px;
+		    background: #fff;
+		    border-radius: 5px 5px 0 0;
+		    padding: 10px;
+		    box-sizing: border-box;
+		    color: #484848;
+		}
+		.searchbox{
+			display: flex;
+			padding: 5px;
+			background: #ddd;
+			border-radius: 3px;
+			font-size: 12px;
+		}
+		.searchbox input{
+			flex: 1;
+			outline: none;
+			border: none;
+			background: #ddd;
+		}
+		.searchbox span{
+			margin-left: 10px;
+		}
+		#text {
+			width: 100%;
+			height: 44px;
+		}
+		.addrlist{
+			font-size: 12px;
+			max-height: 90%;
+			overflow: auto;
+		}
+		.addrlist li{
+			position: relative;
+			margin: 10px 0;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ddd;
+		}
+		.addrlist li b{
+			position: absolute;
+		    right: 0;
+		    top: 0;
+		    font-size: 16px;
+		    color: #399e05;
+		}
+		.addrlist .shopname{
+			margin-bottom: 5px;
+			font-size: 13px;
+		}
+		.addrlist .shopaddr{
+			font-size: 12px;
+			color: #959595;
+		}
+	</style>
+	<script src="https://mchgzh.imzudian.com/mchgzhpt/js/jquery-1.8.3.min.js?v=160806"></script>
+	<script src="https://open.map.qq.com/apifiles/2/4/79/main.js" type="text/javascript"></script>    
+	<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=HEKBZ-UNFKW-H4GRN-RBXL2-XGTV7-U4F5Y"></script>
+</head>
+<body>
+	<div class="btnbox">
+		<div class="quxiao">取消</div>
+		<div class="queding">确定</div>
+	</div>
+<div id="search">
+	<div class="searchbox">
+		<input id="region" type="search" value="" placeholder="搜索地点"><span id="btn">|&nbsp;搜索</span>
+	</div>
+	<ul class="addrlist">
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址地址地址地址地址地址地址</p>
+		</li>
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址</p>
+		</li>
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址</p>
+		</li>
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址</p>
+		</li>
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址</p>
+			<b>✔</b>
+		</li>
+		<li>
+			<p class="shopname">店铺</p>
+			<p class="shopaddr">地址</p>
+		</li>
+	</ul>
+</div>
+ 
+<div id="container"></div>
+	<script>
+	 /*地图获取地理位置start*/
+	  function getAddressInfo(){
+	    var that = this;
+	    var geocoder,citylocation,map,marker = null;
+	    var markersArray=[];
+	    var x= '';
+	    var y= '';
+	    var latitudeLongitude = y+','+x;
+	    var center = new qq.maps.LatLng(y,x);
+	    map = new qq.maps.Map(document.getElementById('container'),{
+	        center: center,
+	        zoom: 13
+	    });
+	    geocoder = new qq.maps.Geocoder({
+	        complete : function(result){
+	            map.setCenter(result.detail.location);
+	            var marker = new qq.maps.Marker({
+	                map:map,
+	                position: result.detail.location
+	            });
+	        }
+	    });
+	    marker = new qq.maps.Marker({
+	        position: new qq.maps.LatLng(y,x),
+	        map: map
+	    });
+	    //获取城市列表接口设置中心点
+	    if(y==''||x==''){
+	        citylocation = new qq.maps.CityService({
+	            complete : function(result){
+	                map.setCenter(result.detail.latLng);
+	            }
+	        });
+	        //调用searchLocalCity();方法    根据用户IP查询城市信息。
+	        citylocation.searchLocalCity();
+	    }
+
+	    //绑定单击事件添加参数
+	    
+	      qq.maps.event.addListener(map, 'click', function(event) {                  
+	        marker.setMap(null);                  
+	        var latitude = event.latLng.getLat(); // 纬度，浮点数，范围为90 ~ -90
+	        var longitude = event.latLng.getLng(); // 经度，浮点数，范围为180 ~ -180。
+	        var latitudeXY = latitude+','+longitude;
+	        var gps1 = {
+	          longitude:longitude,
+	          latitude:latitude
+	        }
+	        sessionStorage.setItem('gps1',JSON.stringify(gps1));
+	        that.latitudeMap=latitude;
+	        that.longitudeMap=longitude;
+	        marker=new qq.maps.Marker({
+	            position:new qq.maps.LatLng(event.latLng.getLat(),event.latLng.getLng()),
+	            map:map
+	        });
+	      });
+	  };
+	  getAddressInfo();
+	              
+	  /*地图获取地理位置end*/ 
+
+
+
+
+	      //封装函数
+	      //address:输入的地址（广东省深圳市大运地铁站）;
+	      //id:地图渲染的容器;
+	      //key:你的秘钥;
+	      var data = {};
+    	function getAddress(region,keyword,id,key){
+	    	data.output="jsonp";
+	    	$.ajax({
+			type:'get',
+			url:'https://apis.map.qq.com/ws/place/v1/suggestion/?region=shenzhen&keyword=meishi&key=HEKBZ-UNFKW-H4GRN-RBXL2-XGTV7-U4F5Y',
+			data:data,
+			dataType:'jsonp',
+			jsonp:"callback",
+        	jsonpCallback:"QQmap",
+			success:function(data) {
+				console.log(data)
+       //          var posi=data.result.location;
+			    // console.log(posi);
+			    // var center = new qq.maps.LatLng(posi.lat,posi.lng);
+			    // var map = new qq.maps.Map(id,{
+			    //     center: center,
+			    //     zoom: 16
+			    // });
+			    // //创建marker
+			    // var marker = new qq.maps.Marker({
+			    //     position: center,
+			    //     map: map
+			    // });
+			},
+			error:function(res) {
+				  alert(JSON.stringify(res));
+			}
+ 
+		  });
+	   }
+	   //点击事件
+	   var container=document.getElementById('container');
+	   $('#btn').on('click',function() {
+	   	    //调用函数
+            getAddress($('#region').val(),$('#keyword').val(),container,'XUKBZ-3JRHV-PT7PA-UYR4R-6Z5ZE-RYFZU');
+	   });
+	   //异步加载
+	   window.οnlοad=function() {
+	   	 $('#btn').trigger('click');
+	   }
+	   
+
+	   function getCaption(num){
+		return (Math.round(num*Math.pow(10,2))/Math.pow(10,2)).toFixed(2);
+		}
+	</script>
+</body>
+</html>

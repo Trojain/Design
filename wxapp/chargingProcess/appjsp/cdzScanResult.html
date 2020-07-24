@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>充电桩我要借入</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/offlinecommon.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/scanResult.css">
+    <style type="text/css">
+        .cdzlistbox{
+            padding: .1rem .10rem;
+            height: 30.8%;
+            margin-bottom: 2%;
+            overflow: auto;
+        }
+        .cdzlistcont{
+            float: left;
+            width: 25%;
+            height: 1.26rem;
+            margin-bottom: .1rem;
+        }
+        .cdzlist{
+            margin: 0 .08rem;
+            height: 100%;
+            font-size: .24rem;
+            color: #323232;
+            background: #fff;
+            border-radius: .2rem;
+            box-shadow: 0 .01rem .16rem rgba(210,210,210,1);
+        }
+        .cdzlist img{
+            display: inline-block;
+            width: .88rem;
+            height: .88rem;
+            vertical-align: middle;
+        }
+        .cdznum{
+            font-size: .20rem;
+            text-align: center;
+        }
+        .cdznum i{
+            font-size: .24rem;
+        }
+        .maincontentbox{
+            height: 38%;
+        }
+        .maincontentbox .tiptext{
+            width: 86%;
+            margin: 0 auto .3rem;
+            line-height: .32rem;
+        }
+    </style>
+</head>
+<body id="body" ontouchstart="warntipTxtnone()">
+    <script>reset();</script>
+    <div id="printbtn" class="homepagebtn"></div>
+    <div class="warntipboxlayer"></div>
+    <div class="scenecontbox">
+        <div class="paymentstep">
+            <div class="paymentstepflex">
+              <div class='stepdetail stepdetailfirst'>
+                <div class='iconimg'><img src="../images/scaniconimg.png"></div>
+                <div class='steptext'>1.扫插座二维码</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/payiconimg.png"></div>
+                <div class='steptext'>2.支付金额</div>
+              </div>
+              <div class='stepdetail stepdetailm'>
+                <div class='iconimg'><img src="../images/charchingiconimg.png"></div>
+                <div  class='steptext'>3.使用充电</div>
+              </div>            
+              <div class="dotted"></div>
+              <div class='clear'></div>
+            </div>
+        </div>                   
+        <div class="cdzlistbox">
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+             <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+            <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+             <div class="cdzlistcont">
+                <div class="cdzlist">
+                    <div><img src="../img/cdzcharging.png">空闲中</div>
+                    <div class="cdznum">1234567890</div>
+                </div>
+            </div>
+        </div>
+        <div class="maincontentbox">
+            <div class="oparotitle">
+                <div class="oparotitleflex">
+                    <div class="oparoline oparolinel"></div>
+                    <div class="oparotitletext">温馨提示</div>
+                    <div class="oparoline"></div>
+                </div>
+            </div>           
+            <p class="tiptext">* 请扫充电设备上的二维码进行充电；</p>
+            <p class="tiptext">* 充电端口的状态为空闲中代表可进行扫码充电；</p>
+            <p class="tiptext">* 充电端口的状态为充电中代表已有设备正在进行充电中；</p>
+            <div class="scanbtn">
+                <i class="iconfont icon-scan"></i>
+                我要充电
+            </div>       
+        </div>
+
+        <div class="pageadver">
+            <img src="../images/pageadver.png">
+        </div>       
+    </div>
+    <script type="text/javascript">
+        
+        /*var warntip = document.getElementById("warntip"); 
+        var warntipTxt = document.getElementById("warntipTxt");
+        var warntipTxtnoneflag = true;
+        warntip.onclick = function(){
+            if(warntipTxtnoneflag){
+                warntipTxt.style.display = "block";
+                warntipTxtnoneflag =true;
+            }
+            event.stopPropagation();            
+        }  
+        function warntipTxtnone(){
+            if(warntipTxt.style.display == "block"){
+                warntipTxt.style.display = "none"; 
+                warntipTxtnoneflag = false;
+            }
+           
+        }  */
+
+
+        // var warntip = document.getElementById("warntip"); 
+        // var warntipTxt = document.getElementById("warntipTxt");
+        // document.addEventListener("click", function(e){
+        //     if(warntipTxt.style.display == "block"){
+        //         warntipTxt.style.display = "none";
+        //     }else{
+        //         if( e.target === warntip ){
+        //            warntipTxt.style.display = "block";
+        //         }
+        //     }
+        // });
+    </script>
+</body>
+</html>

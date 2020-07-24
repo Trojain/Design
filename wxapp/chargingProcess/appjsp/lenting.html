@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>租电</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../appcss/offlinecommon.css">
+    <style type="text/css">
+        .bannerimg{
+            height: 27%;
+            width: 100%;
+            margin: 0 auto;
+            background: #fff url(../images/1.png) no-repeat center;
+            background-size: auto 100%;
+            box-shadow: 0 .08rem .10rem rgba(0,49,122,.16);
+        }
+        .maincontentbox {
+            position: relative;
+            height: 62%;
+            margin-top: 4%;
+        }
+        .lentdingtip{
+            padding: .4rem .2rem;
+            font-size: .32rem;
+            line-height: .46rem;
+            text-align: center;
+        }
+        .lentdingtip span{
+            color: #36a3ff;
+        }
+        .tiptext{
+            text-align: center;
+            color: #959595;
+            line-height: .4rem;
+        }
+        .progressline{
+            position: relative;
+            width: 70%;
+            height: .1rem;
+            border-radius: .5rem;
+            margin: .4rem auto;
+            background: #959595;
+        }
+        .currprogressline{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 20%;
+            background: #36a3ff;
+            border-radius: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div id="printbtn" class="homepagebtn"></div>
+    <div class="bannerimg"></div>       
+    <div class="maincontentbox">
+        <div class="lentdingtip">
+            请从<span>指示灯闪烁</span>指示灯闪烁或<span>指示灯熄灭</span>的仓口取走充电宝
+        </div>
+
+        <div class="oparostep">
+            <div class="oparostepflex">
+                <div class="progressline">
+                    <div class="currprogressline"></div>
+                </div>
+                <p class="tiptext">正在为您快马加鞭的运送充电宝</p> 
+                <p class="tiptext">若充电宝未弹出，请耐心等待片刻</p>        
+            </div>
+        </div>             
+    </div>
+    <div class="pageadver">
+        <img src="../images/pageadver.png">
+    </div>       
+</body>
+</html>

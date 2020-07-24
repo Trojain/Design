@@ -1,0 +1,67 @@
+body{
+	background: #fff;
+}
+.callservice{
+	padding: 0 .33rem;
+	height: 1.00rem;
+	line-height: 1.00rem;
+	font-size: .32rem;
+	color: #444;
+}
+.buzhou{
+	display: flex;
+	align-items: center;
+	padding: 0 .40rem;
+	height: 1.54rem;
+	color: #959595;
+	overflow: hidden;
+}
+.buzhouleft{
+	float: left;
+	width: .48rem;
+	margin-right: .42rem;
+}
+.buzhouline{
+	margin-left: .22rem;
+	width: .05rem;
+	height: .53rem;
+	background: #c7c7c7;
+}
+.buzhouright{
+	float: left;
+}
+.stepcircle{
+	width: .48rem;
+	height: .48rem;
+	line-height: .48rem;
+	text-align: center;
+	font-size: .26rem;
+	color: #fff;
+	background: #c7c7c7;
+	border-radius: 50%;
+}
+.buzhouright .tit{
+	line-height: .4rem;
+	font-size: .32rem;
+}
+.buzhouright .text{
+	font-size: .24rem;
+}
+.alreadygo .buzhouline,.alreadygo .stepcircle{
+	background: #36a3ff;
+}
+.buzhou .whrite{
+	background: #fff;
+}
+.button{
+	 height: .9rem;
+	 line-height:.9rem;
+	 width: 80%;
+	 padding: 0 .3rem;
+	 margin: .8rem auto 0;
+	 text-align: center;
+	 font-size: .3rem;
+	 color: #fff;
+	 background: #36a3fe;
+	 border-radius:3px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<title>验证手机号</title>
+	<script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+	<style type="text/css">
+		.verifyphonepage{
+			padding: .5rem .3rem 0;
+			color: #444;
+			font-size: .3rem;
+		}
+		.verifyphone{
+			font-size: .5rem;
+		}
+		.userinfo{
+			margin: .5rem 0 .4rem;
+		}
+		.userinfo img{
+			display: inline-block;
+			width: 1.0rem;
+			height: 1.0rem;
+			margin-right: .2rem;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+		.userinfo span{
+			font-size: .34rem;
+		}
+		.verifytip{
+			margin-bottom: .5rem;
+			color: #959595;
+		}
+		.verifyinput{
+			display: block;
+			width: 100%;
+			padding: .2rem;
+			border-bottom: 1px solid #f2f2f2;
+			outline: none;
+		}
+		.verifybtn{
+			margin-top: .5rem;
+			height: .8rem;
+			line-height: .8rem;
+			border-radius: 1rem;
+			background: #eaeaea;
+			text-align: center;
+			color: #959595;
+		}
+		.verifybtnactive{
+			background: #72da72;
+			color: #fff;
+		}
+		.verifybtnactive:active{
+			background: #6ee26e;
+		}
+	</style>	
+</head>
+<body>
+	<script>reset();</script>
+	<div class="verifyphonepage">
+		<div class="verifyphone">验证手机号</div>
+		<div class="userinfo">
+			<img src="../img/bg.jpg">
+			<span>谭~~</span>
+		</div>
+		<div class="verifytip">为确保您的账号安全，请验证手机号</div>
+		<input class="verifyinput" type="number" name="" placeholder="请输入手机号">
+		<div class="verifybtn">完成</div>
+		<div class="verifybtn verifybtnactive">微信一键验证手机号</div>
+	</div>
+</body>
+</html>

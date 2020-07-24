@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>分发工单详情</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/weui.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <style>
+        .info-head {
+            text-align: center;
+            background-color: #fff;
+            padding: .20rem 0;
+        }
+
+        .info-head .img {
+            width: 1rem;
+            height: 1rem;
+            display: block;
+            margin: .30rem auto;
+        }
+
+        .info-box .weui-cell {
+            height: auto;
+            line-height: normal;
+            padding: .20rem .30rem;
+
+        }
+
+        .info-box .weui-cell::before {
+            border: none;
+        }
+
+        .info-box .weui-cell__bd {
+            text-align: right;
+        }
+
+        .info-box .weui-label {
+            width: 2.40rem;
+        }
+
+        .info-list {
+            margin-top: .30rem;
+            margin-bottom: 2rem;
+            background-color: #fff;
+        }
+
+        .info-list .title {
+            padding: .20rem .30rem;
+            font-weight: bolder;
+            font-size: .28rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-list .list {
+            padding: .20rem .30rem;
+        }
+
+        .info-list .list .item {
+            width: 50%;
+            float: left;
+            line-height: .50rem;
+        }
+
+        .info-btn {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: #fff;
+            padding: .30rem;
+            box-sizing: border-box;
+
+        }
+
+        .info-btn .flex {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .info-btn .btn {
+            margin: 0 .60rem;
+            line-height: .70rem;
+            font-size: .28rem;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <div class="select-box">
+        <i class="iconfont icon-down"></i>
+        <select class="select">
+            <div>22</div>
+            <option>111111111111111111111111111111111111</option>
+            <option>选项2</option>
+            <option>选项3</option>
+        </select>
+    </div>
+
+    <div class="order-info">
+        <div class="info-head">
+            <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/logo.png" alt="" class="img">待确认
+        </div>
+        <div class="info-box">
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">设备分发工单号</label>
+                    </div>
+                    <div class="weui-cell__bd">12123213121</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">创建时间</label>
+                    </div>
+                    <div class="weui-cell__bd">2020-01-10 22:45:12</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">发起方</label>
+                    </div>
+                    <div class="weui-cell__bd">XXXXX代理名称</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">接收方</label>
+                    </div>
+                    <div class="weui-cell__bd">XXXXX二级代理名称</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">分发设备总数</label>
+                    </div>
+                    <div class="weui-cell__bd">10台</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">分润比例</label>
+                    </div>
+                    <div class="weui-cell__bd">10%</div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">设备归属权</label>
+                    </div>
+                    <div class="weui-cell__bd">转移给接收方</div>
+                </div>
+            </div>
+        </div>
+        <div class="info-list">
+            <div class="title">变更设备清单</div>
+            <div class="list">
+                <div class="clearfix">
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                    <div class="item">编号：19126600000016</div>
+                </div>
+            </div>
+        </div>
+        <div class="info-btn">
+            <div class="flex">
+                <button class="btn flex_item" id="modifyBtn">修改</button>
+                <button class="btn flex_item" id="revokeBtn">撤销</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/weui.min.js" rel="stylesheet"></script>
+
+    <script type="text/javascript">
+        reset();
+        var path = '<%=path%>';
+
+
+        // toast('111')
+
+
+
+        $(function () {
+            var params = {
+                title: "提示",
+                content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
+                oneBtn: false,
+                okText: "确定",
+                cancelText: "取消",
+                succFun: function () { console.log('点击了确定按钮'); },
+                cancelFun: function () { console.log('点击了取消按钮'); }
+            }
+            $('#modifyBtn').on('click', function () {
+                showDialog(params);
+            })
+
+        });
+
+
+
+        function showDialog(params) {
+            var str = '<div class="js_dialog"><div class="weui-mask"></div><div class="weui-dialog"><div class="weui-dialog__hd"><strong class="weui-dialog__title">' + (params.title || '提示') + '</strong></div><div class="weui-dialog__bd">' + params.content + '</div><div class="weui-dialog__ft">';
+            if (!params.oneBtn) {
+                str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_default cancel-btn">' + (params.cancelText || '取消') + '</a>';
+            }
+            str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_primary ok-btn">' + (params.okText || '确定') + '</a></div></div></div>'
+
+            $('body').append(str);
+            $('.cancel-btn').bind('click', function () {
+                if (params.cancelFun) {
+                    params.cancelFun();
+                }
+                hideDialog();
+            })
+            $('.ok-btn').bind('click', function () {
+                if (params.succFun) {
+                    params.succFun();
+                }
+                hideDialog();
+            })
+        }
+
+        function hideDialog() {
+            $('.js_dialog').hide();
+            $('.js_dialog').remove();
+            $('.cancel-btn,.ok-btn').off('click');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>新增代理商 、 新增铺货商</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/weui.css" rel="stylesheet">
+    <style>
+        body {
+            font-size: .28rem;
+            background: #f2f2f2;
+        }
+
+        .add-agent {
+            font-size: .3rem;
+            text-align: center;
+        }
+
+        .header {
+            margin: .6rem .3rem 0;
+        }
+
+        .img {
+            width: 5rem;
+            height: 5rem;
+            margin: 1rem auto .5rem;
+            display: block;
+        }
+
+
+
+        .primary-btn {
+            width: 80%;
+            padding: .2rem 0;
+            font-size: .3rem;
+            border-radius: 5px;
+            border: none;
+            background-color: #36A3FF;
+            color: #fff;
+        }
+
+        .fixed-btn {
+            position: fixed;
+            bottom: 2%;
+            left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="add-agent">
+        <div class="header">微信扫一扫二维码图案，成为我的子代理商</div>
+        <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/rq.png" class="img">
+        <div>扫码对方填写注册信息</div>
+        <a href="" class="primary-btn fixed-btn">我来填写注册信息</a>
+    </div>
+
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/weui.min.js" rel="stylesheet"></script>
+
+    <script type="text/javascript">
+        reset();
+        var path = '<%=path%>';
+        $(function () {
+            $("#switchCP").is(":checked")
+        });
+    </script>
+</body>
+
+</html>

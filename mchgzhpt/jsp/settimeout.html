@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>点击按钮</div>
+</body>
+<script type="text/javascript">
+pushHistory();
+function pushHistory() {
+ var state = {
+  title: "title",
+  url: "#"
+ };
+ window.history.pushState(state, "title", "#");
+}
+if (typeof window.addEventListener != "undefined") {
+ window.addEventListener("popstate", function (e) {
+ WeixinJSBridge.call('closeWindow');
+ }, false);
+} else {
+ window.attachEvent("popstate", function (e) {
+ WeixinJSBridge.call('closeWindow');
+ });
+}
+ pushHistory();
+ function pushHistory() {
+  var state = {
+  title: "title",
+  url: "#"
+  };
+  window.history.pushState(state, "title", "#");
+ }
+ $(function() {
+  wx.config({
+  debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+  appId: '@ViewBag.AppID', // 必填，公众号的唯一标识
+  timestamp: '@ViewBag.TimeStamp', // 必填，生成签名的时间戳
+  nonceStr: '@ViewBag.NonceStr', // 必填，生成签名的随机串
+  signature: '@ViewBag.Signature', // 必填，签名，见附录1
+  jsApiList: [
+   'checkJsApi',
+   'hideOptionMenu',
+   'scanQRCode',
+   'closeWindow'
+   ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+  });
+  wx.ready(function() {
+  wx.hideOptionMenu();
+  });
+  if (typeof window.addEventListener != "undefined") {
+  window.addEventListener("popstate", function(e) {
+   wx.closeWindow();
+  }, false);
+  } else {
+  window.attachEvent("popstate", function(e) {
+   wx.closeWindow();
+  });
+  }
+ });
+</script>
+</html>

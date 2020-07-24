@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>分发工单</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/weui.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <style>
+        .search-box {
+            padding: .3rem;
+            background-color: #fff;
+        }
+
+        .search-box .input-box {
+            height: .8rem;
+            line-height: .8rem;
+            position: relative;
+
+        }
+
+        .search-box .input {
+            width: 100%;
+            height: .8rem;
+            line-height: .80rem;
+            border: 1px solid #ddd;
+            border-radius: .1rem;
+            padding: 0 .8rem 0 .3rem;
+        }
+
+        .search-box .scan-icon {
+            display: inline-block;
+            background: url(http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/sm.png) center center no-repeat;
+            background-size: 50%;
+            height: .8rem;
+            width: .8rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .time-box {
+            height: .80rem;
+            line-height: .80rem;
+            margin-top: .30rem;
+            background-color: #fff;
+
+        }
+
+        .time-box .time-picker {
+            border: 1px solid #ddd;
+            border-radius: .1rem;
+            width: 75%;
+
+
+        }
+
+        .time-box .datetime {
+            height: .80rem;
+            line-height: .80rem;
+            width: 45%;
+            text-align: center;
+        }
+
+        .time-box .btn {
+            line-height: .80rem;
+            width: auto;
+            padding: 0 0.4rem;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            border-top: 1px solid #f2f2f2;
+            background: #fff;
+        }
+
+        .tabs span {
+            flex: 1;
+            display: flex;
+            height: 1rem;
+            justify-content: center;
+            align-items: center;
+            font-size: .28rem;
+            color: #444;
+            border-right: 1px solid #f2f2f2;
+            border-top: 1px solid #f2f2f2;
+            border-bottom: 2px solid #fff;
+        }
+
+        .tabs span:nth-child(2) {
+            border-right: none
+        }
+
+        .tabs .active {
+            color: #36a3ff !important;
+            border-bottom: 2px solid #36a3ff;
+        }
+
+        .lists {
+            margin: .3rem;
+        }
+
+        .lists li {
+            display: none;
+        }
+
+        .lists li .item {
+            margin-bottom: .3rem;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .lists .title {
+            padding: 0 .3rem;
+            line-height: .8rem;
+            font-size: 0.26rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cell_box {
+            position: relative;
+        }
+
+        .cell_box .iconfont {
+            position: absolute;
+            top: 50%;
+            right: 2%;
+            font-size: .4rem;
+        }
+
+        .cell_box .cell_left {
+            width: 2rem;
+        }
+
+        .cell_box .cell_right {
+            text-align: left;
+        }
+
+        .lists .btn-box {
+            justify-content: space-evenly;
+            margin-bottom: .2rem;
+        }
+
+        .lists .btn {
+            padding: .06rem .3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="work-order">
+        <div class="search-box">
+            <div class="input-box">
+                <input type="text" class="input" placeholder="请输入设备分发工单号、设备编号" />
+                <span class="scan-icon"></span>
+            </div>
+            <div class="time-box clearfix">
+                <div class="time-picker clearfix fl">
+                    <div class="timeCon">
+                        <input class="datetime" type="text" name="startTime" id="startTime" readonly value="" placeholder="请选择开始日期">
+                        <span>到</span>
+                        <input class="datetime" type="text" name="endTime" id="endTime" readonly value="" placeholder="请选择结束日期">
+                        <div class="search" id="search"></div>
+                    </div>
+                </div>
+                <button class="btn primary-btn fr" size="mini">查询</button>
+            </div>
+        </div>
+        <div class="tabs">
+            <span class="active">全部</span>
+            <span>待确认</span>
+            <span>已确认</span>
+            <span>已驳回(1)</span>
+            <span>已撤销</span>
+        </div>
+        <ul class="lists">
+            <li class="show clearfix">
+                <div class="item">
+                    <div class="title clearfix">
+                        <span class="fl">设备分发工单号：12123213121</span>
+                        <span class="fr">待确认</span>
+                    </div>
+                    <div class="cell_box">
+                        <i class="iconfont icon-right"></i>
+                        <div class="cell_item">
+                            <div class="cell_left">发起方</div>
+                            <div class="cell_right">XXXXX代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">接收方</div>
+                            <div class="cell_right">XXXXX二级代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">创建时间</div>
+                            <div class="cell_right">2020-01-10 22:45:12</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">分发设备总数</div>
+                            <div class="cell_right">50台</div>
+                        </div>
+                    </div>
+                    <div class="btn-box flex">
+                        <button class="btn">修改</button>
+                        <button class="btn">撤销</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title clearfix">
+                        <span class="fl">设备分发工单号：12123213121</span>
+                        <span class="fr">待确认</span>
+                    </div>
+                    <div class="cell_box">
+                        <i class="iconfont icon-right"></i>
+                        <div class="cell_item">
+                            <div class="cell_left">发起方</div>
+                            <div class="cell_right">XXXXX代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">接收方</div>
+                            <div class="cell_right">XXXXX二级代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">创建时间</div>
+                            <div class="cell_right">2020-01-10 22:45:12</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">分发设备总数</div>
+                            <div class="cell_right">50台</div>
+                        </div>
+                    </div>
+                    <div class="btn-box flex">
+                        <button class="btn">修改</button>
+                        <button class="btn">撤销</button>
+                    </div>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="item">
+                    <div class="title clearfix">
+                        <span class="fl">设备分发工单号：12123213121</span>
+                        <span class="fr">待确认</span>
+                    </div>
+                    <div class="cell_box">
+                        <i class="iconfont icon-right"></i>
+                        <div class="cell_item">
+                            <div class="cell_left">发起方</div>
+                            <div class="cell_right">XXXXX代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">接收方</div>
+                            <div class="cell_right">XXXXX二级代理名称</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">创建时间</div>
+                            <div class="cell_right">2020-01-10 22:45:12</div>
+                        </div>
+                        <div class="cell_item">
+                            <div class="cell_left">分发设备总数</div>
+                            <div class="cell_right">50台</div>
+                        </div>
+                    </div>
+                    <div class="btn-box flex">
+                        <button class="btn">修改</button>
+                        <button class="btn">撤销</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/weui.min.js" rel="stylesheet"></script>
+
+    <script type="text/javascript">
+        reset();
+        var path = '<%=path%>';
+        $(function () {
+            $("#switchCP").is(":checked")
+
+            //起止和输入tab
+            $('.tabs').on('click', 'span', function () {
+                let i = $(this).index();
+                deviceNumType = i;
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.lists li').removeClass('show');
+                $('.lists li').eq(i).addClass('show');
+            });
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

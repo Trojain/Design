@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<title>绑定成功</title>
+	<script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+    <style type="text/css">
+    	body{
+    		background: #fff;
+    		text-align: center;
+    	}
+    	.bindsuccesspage{
+    		padding: 1rem 0;
+    	}
+    	.addbtnbox{
+			padding: .2rem;
+			background: #f5f5f5;
+			overflow: hidden;
+			display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		.adddevicetip{
+			line-height: .4rem;
+			color: #f00;
+			font-size: .26rem;
+		}
+		.adddevicebtn{
+			margin-left: .2rem;
+			width: 4.8rem;
+			height: .8rem;
+			line-height: .8rem;
+			background: #fff;
+			border-radius: .05rem;
+			border: 1px solid #f2f2f2;
+			color: #36a3fe;
+			font-size: .26rem;
+			outline: none;
+		}
+		.adddevicebtn:disabled{
+			background: #e4e4e4;
+			color: #666;
+		}
+		.adddevicebtn span{
+			margin-right: .1rem;
+		}
+    	.icon-selected{
+    		text-align: center;
+    		font-size: 1.6rem;
+    		color: #36a3fe;
+    	}
+    	.bindsuccess{
+    		margin: .2rem 0 .8rem;
+    		font-size: .42rem;
+    	}
+    	.bindsuccessinfo{
+    		padding: 0 .3rem;
+    		line-height: .4rem;
+    		font-size: .28rem;
+    		color: #959595;
+    	}
+    	.bindsuccessbtnbox{
+    		margin-top: 1rem;
+    		font-size: 0;
+    	}
+    	.bindsuccessbtn{
+    		display: inline-block;
+    		font-size: .3rem;
+    		width: 2.5rem;
+    		height: .8rem;
+    		line-height: .8rem;
+    		border: 1px solid #d4d4d4;
+    		border-radius: .1rem;
+    	}
+    	.continuebindbtn{
+    		margin-left: .5rem;
+    		border: 1px solid #36a3fe;
+    		background: #36a3fe;
+    		color: #fff;
+    	}
+    	.handynav{
+    		position: fixed;
+    		bottom: 1rem;
+    		right: 0;
+    		font-size: 0;
+    	}
+    	.handynavbtn{
+    		display: inline-block;
+    		padding: .05rem;
+    		font-size: .26rem;
+    		background: #999;
+    		color: #fff;
+    		overflow: hidden;
+    		border-radius: .05rem;
+    		vertical-align: .30rem;
+    	}
+    	.handynavbtn i,.handynavbtn span{
+    		display: inline-block;
+    		vertical-align: middle;
+    	}
+    	.handynavbtn i{
+    		margin-top: .05rem;
+    		width: .4rem;
+    		vertical-align: middle;
+		    font-size: .5rem;
+    	}
+    	.handynavbtn span{
+    		width: .8rem;
+    	}
+    	.handynavlist{
+    		display: none;
+    		padding: .2rem 0;
+    		border:1px solid #d4d4d4;
+    		border-radius: .1rem;
+    	}
+    	.handynavlist ul{
+    		font-size: 0;
+    	}
+    	.handynavlist li{
+    		display: inline-block;
+    		margin: 0 .1rem;
+    		font-size: .26rem;
+    	}
+    	.handynavlist li i{
+    		color: #999;
+    		font-size: .5rem;
+    		margin-bottom: .1rem;
+    	}
+    	.handynavbtnshow .icon-xiangzuoshuangjiantou{
+    		transform:rotate(180deg);
+			-ms-transform:rotate(180deg); 	/* IE 9 */
+			-moz-transform:rotate(180deg); 	/* Firefox */
+			-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+			-o-transform:rotate(180deg);
+    	}
+    </style>
+</head>
+<body>
+	<script>reset();</script>
+	<div class="addbtnbox">
+		<p class="adddevicetip">如果您需要弹出此次完成绑定的设备上所有的充电宝，请点击右侧弹出按钮</p>
+		<button class="adddevicebtn">
+			我要弹出充电宝
+		</button> 
+	</div>
+	<div class="bindsuccesspage">
+		<div class="iconfont icon-selected"></div>
+		<div class="bindsuccess">绑定成功</div>
+		<p class="bindsuccessinfo">本次成功绑定XXX台设备，您可以将设备投放到您的下级商户，开启赚钱模式了哦~</p>
+		<div class="bindsuccessbtnbox">
+			<div class="bindsuccessbtn gousercenterbtn">返回商户中心</div>
+			<div class="bindsuccessbtn continuebindbtn">继续绑定</div>
+		</div>	
+	</div>
+	<div class="handynav">
+		<div class="handynavbtn" id="handynavbtn" onclick="handynavdrogg(this)"><i class="iconfont icon-xiangzuoshuangjiantou"></i><span id='handynavbtntext'>快捷导航</span></div>
+		<div class="handynavlist" id="handynavlist">
+			<ul>
+				<li>
+					<i class="iconfont icon-geren"></i>
+					<p>商户中心</p>
+				</li>
+				<li>
+					<i class="iconfont icon-tixian"></i>
+					<p>我的钱包</p>
+				</li>
+				<li>
+					<i class="iconfont icon-tuikuanmingxi"></i>
+					<p>交易查询</p>
+				</li>
+				<li>
+					<i class="iconfont icon-shebeiguanli"></i>
+					<p>我的设备</p>
+				</li>
+			</ul>
+		</div>
+		<div id="result_prompt"></div>
+	</div>
+	<script src="../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		function handynavdrogg(obj){
+			if ($(obj).hasClass('handynavbtnshow')) {
+				$(obj).removeClass('handynavbtnshow');
+				$("#handynavbtntext").text('快捷导航');
+				$("#handynavlist").hide(60);
+			}else{
+				$(obj).addClass('handynavbtnshow');
+				$("#handynavbtntext").text('收起');
+				$("#handynavlist").show(60);
+				$("#handynavlist").css('display','inline-block');
+			}
+		}
+
+
+		function getDeviceInfoAgainTip(obj){
+			clicktime = 0;
+			$("#getDeviceInfoAgain").removeAttr("disabled");
+			$("#layermodal").css('display','flex');
+		 	$("#getDeviceInfoAgain").click(function(){
+		 		if(clicktime == 0){
+		 			clicktime = 1;
+			 		$("#getDeviceInfoAgain").attr("disabled","disabled");
+			 	 	$("#layermodal").hide();
+				  	$(obj).attr("disabled","disabled");
+				  	$("#adddevicebtn").attr("disabled","disabled");
+				 	var scanedDeviceId = $(obj).data("scaneddeviceid");
+			 		getDeviceInfo(scanedDeviceId,3,obj);
+		 		}
+		 	})
+		 }
+
+		    var a= 2.00;
+		    var b= 0.2;
+		    console.log(a+b)
+		    var payAmount = '5';
+
+		    $("#result_prompt").text(`a的值是：${payAmount}`);
+		
+		
+	</script>
+</body>
+</html>
+
+

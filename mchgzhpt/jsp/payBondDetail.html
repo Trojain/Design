@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>缴纳保证金明细</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+    <style type="text/css">
+      body{
+        background: #f1f3f6;
+      }
+      .timeCon {
+            width: 100%;
+        }
+        .timeCon .time{
+            background: #36A3FF;
+            height: 1.4rem;
+        }
+        .time{
+            font-size: 15px;
+            height: 1.4rem;
+            line-height: 1.4rem;
+            padding: 0 .3rem;
+        }
+        .time span{
+            margin: 0 .2%;
+        }
+        .time .datetime{
+            display: inline-block;
+            height: 0.6rem;
+            width: 30%;
+            background: #fff url(../img/date.png) no-repeat 95% 50%;
+            background-size: 15%;
+            font-size: 12px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+        }
+        .time .search{
+            display: inline-block;
+            float: right;
+            height: 0.56rem;
+            width: 0.56rem;
+            background: url(../img/serch.png) no-repeat;
+            background-size: 100%;
+            margin: .45rem 0 0 0;
+        } 
+        .assureDevl{
+          width: 94%;
+          margin: .2rem auto .20rem;
+          border-radius: .10rem;
+          background: #fff;
+        }
+        .assureDevltit{
+          position: relative;
+          padding: 0 .25rem;
+          height: 1.0rem;
+          line-height: 1.0rem;
+          font-size: .28rem;
+          color: #484848;
+          text-indent: .28rem;
+          border-bottom: #eef3f4 1px solid;
+        }
+        .assureDevltit .status{
+          float: right;
+          color: #36a3ff;
+        }
+        .assureDevltit .statusfail{
+          color: #959595;
+        }
+        .assureDevltit:after{
+          content: '';
+          position: absolute;
+          top: .45rem;
+          left: .25rem;
+          width: .14rem;
+          height: .14rem;
+          border-radius: 50%;
+          background: #36a3ff;
+        }
+        .assureDevltit b{
+          float: right;
+          font-size: .26rem;
+          color: #36a3ff;
+        }
+        .assureDevlcont{
+          padding: .16rem .25rem;
+          border-bottom: #eef3f4 1px solid;
+        }
+        .assureDevlinfo{
+          color: #959595;
+          display: flex;
+          height: .48rem;
+          line-height: .48rem;
+          font-size: .24rem;
+        }
+        .assureDevlinfo .label{
+          display: inline-block;
+          flex: 0 0 2.10rem;
+          width: 2.10rem;
+          color: #959595;
+        }
+        .assureDevlinfo .infor{
+          flex:1;
+          color: #484848;
+          overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+   <div class="timeCon">
+      <div class="time">
+          <input class="datetime" type="text" name="startTime" id="startTime" readonly="" value="">
+          <span>到</span>
+          <input class="datetime" type="text" name="endTime" id="endTime" readonly="" value="">
+          <div class="search" id="search"></div>
+      </div>
+      <div class="assureDevl">
+        <div class="assureDevltit">交易单号<span class="status">支付成功</span></div>
+        <div class="assureDevlcont">
+          <div class="assureDevlinfo">
+            <span class="label">时间</span>
+            <span class="infor">2019-4-25 09:29:33</span>
+          </div>
+          <div class="assureDevlinfo">
+            <span class="label">金额（元）</span>
+            <span class="infor">7.00</span>
+          </div>
+          <div class="assureDevlinfo">
+            <span class="label">交易名称</span>
+            <span class="infor">设备保证金</span>
+          </div>
+        </div>
+      </div>
+      <div class="assureDevl">
+        <div class="assureDevltit">交易单号<span class="status statusfail">支付成功</span></div>
+        <div class="assureDevlcont">
+          <div class="assureDevlinfo">
+            <span class="label">时间</span>
+            <span class="infor">2019-4-25 09:29:33</span>
+          </div>
+          <div class="assureDevlinfo">
+            <span class="label">金额（元）</span>
+            <span class="infor">7.00</span>
+          </div>
+          <div class="assureDevlinfo">
+            <span class="label">交易名称</span>
+            <span class="infor">设备保证金</span>
+          </div>
+        </div>
+      </div>
+  </div>   
+</body>
+</html>

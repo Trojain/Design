@@ -1,0 +1,122 @@
+body{
+	font-size: .28rem;
+}
+.adbanner{
+	width: 100%;
+	height: 2.45rem;
+}
+.adbanner img{
+	display: block;
+	width: 7.50rem;
+	height: 2.45rem;
+	margin: 0 auto;
+}
+.adnav{
+	padding: .04rem .20rem .30rem;
+	height: 0.94rem;
+}
+.adnavlistbox{
+	float: left;
+	font-size: 0;
+	height: 0.94rem;
+}
+.adnavlist{
+	display: inline-block;
+	height: .60rem;
+	line-height: .60rem;
+	padding: 0 .35rem;
+	color: #3995ff;
+	font-size: .28rem;
+	border-radius: .50rem;
+	box-shadow: inset 0 0 0.15rem rgba(57,149,255,.7), 0 .05rem .06rem rgba(76,76,76,.15);
+}
+.addot{
+	display: inline-block;
+	margin: 0 .10rem;
+	width: .10rem;
+	height: .10rem;
+	border-radius: 50%;
+	background: #d2d2d2;
+}
+.active .adnavlist,.active .addot{
+	background: #3995ff;
+	color: #fff;
+	box-shadow: inset 0 0 0.15rem rgba(255,255,255,.7), 0 .05rem .06rem rgba(5,90,161,.15);
+}
+.adlist{
+	width: 7.10rem;
+	margin: 0 auto .20rem;
+	background: #fff;
+	overflow: hidden;
+	box-shadow: inset 0 0 0.15rem rgba(255,255,255,.7), 0 .02rem .10rem rgba(5,90,161,.30);
+	border-radius: .10rem;
+}
+.adlisttop{
+	padding: .20rem 0;
+	width: 100%;
+	overflow: hidden;
+}
+.hangyebox{
+	float: left;
+	vertical-align: middle;
+	font-size: 0;
+}
+.hangye{
+	display: inline-block;
+	padding: .07rem .12rem;
+	margin-right: .10rem;
+	font-size: .26rem;
+	color: #ebb703;
+	background: #fdf5cd;
+	border-radius: 0 .10rem .10rem 0;
+	vertical-align: middle;
+}
+.shangdian{
+	display: inline-block;
+	width: 5.20rem;
+	font-size: .34rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.juli{
+	float: right;
+	padding-right: .10rem;
+	color: #959595;
+}
+.adline{
+	width: 7.10rem;
+	height: 0.02rem;
+
+}
+.adline img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.adlistbottom{
+	padding: .20rem 0;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.adyouhui{
+	display: inline-block;
+	padding-left: .20rem;
+	width: 5.00rem;
+	color: #3995ff;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.adgonow{
+	float: right;
+	height: .50rem; 
+	line-height: .50rem;
+	padding: 0 .20rem;
+	font-size: .26rem;
+	color: #fff;
+	background: #53b0fe;
+	border-radius:  .50rem 0 0 .5rem ;
+}

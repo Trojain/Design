@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>问题反馈</title>
+    <script src="reset.js"></script>
+    <link href="reset.css" rel="stylesheet">
+    <link href="iconfont/iconfont.css" rel="stylesheet">
+    <link href="common.css" rel="stylesheet">
+    <style type="text/css">
+      .feedback{
+         padding: .40rem .20rem 0;
+      }
+      .callphone{
+        margin-bottom: .20rem;
+        height: .90rem;
+        line-height: .90rem;
+        padding: 0 .20rem;
+        border: 1px solid #36a3ff;
+      }
+      .redstar{
+        color: #ff5f5f;
+      }
+      .callphone input{
+        border: none;
+        outline: none;
+        font-size: .26rem;
+      }
+      .problem{
+        position: relative;
+        padding: .10rem .20rem;
+        height: 3.20rem;
+        border: 1px solid #36a3ff;
+        margin-bottom: .20rem;
+      }
+      .problem textarea{
+        height: 80%;
+        width: 5.00rem;
+        font-size: .26rem;
+        border: none;
+        resize: none;
+        vertical-align: text-top;
+        line-height: .40rem;
+      }
+      .numlimit{
+        position: absolute;
+        right: .20rem;
+        bottom: .20rem;
+        color: #959595;
+        font-size: .26rem;
+      }
+      .sendpic{
+        padding: .20rem;
+        height: 3.20rem;
+        border: 1px solid #36a3ff;
+      }
+      .uploadimgbox{
+        width: 100%;
+        padding: .40rem 0 .10rem;
+        overflow: hidden;
+      }
+      .uploadimg{
+          position: relative;
+          float: left;
+          margin: 0 3%;
+          width: 44%;
+          border: dashed 1px #36a3fe;
+      }
+      .photobox{
+          position: relative;
+          width: 100%;
+          height: 1.95rem;
+          background: #f5faff url(image/sendimg.png) no-repeat center;
+          background-size: .97rem .77rem;
+      }
+      .photobox input {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+      .icon-yichu{
+        position: absolute;
+        top: -.25rem;
+        right: -.25rem;
+        color: #ff5f5f;
+        font-size: .5rem;
+        z-index: 1;
+        background: #fff;
+      }
+      .warmtip{
+        position: relative;
+        width: 6.30rem;
+        line-height: .48rem;
+        padding-left: .30rem;
+        margin: .30rem auto 0;
+        text-align: center;
+      } 
+      .warmtip .bluecircle{
+        top: .18rem;
+      }
+      .feedback .yellowbtn{
+        width: 3.00rem;
+        height: .70rem;
+        line-height: .70rem;
+        margin: .60rem auto 0;
+      }
+      /*弹窗*/
+      .layer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,.5);
+      }
+      .layercontbox{
+          position: relative;
+          width: 53.3%;
+          height: 46.9%;
+      }
+      .lanyabg{
+        position: relative;
+        z-index: 1;
+        height: 32.8%;
+        background:  url(image/layer.png) no-repeat top center;
+        background-size: 100% auto;
+      }
+      .layercont{
+        position: relative;
+        height: 67.2%;
+        margin-top: -25%;
+        background: #fff;
+        border-radius: .1rem;
+      }
+      .layertext{
+        position: relative;
+        padding-top: 30%;
+        width: 100%;
+        line-height: .4rem;
+        text-align: center;
+      }
+      .openguid{
+        margin: .2rem;
+        text-align: center;
+        line-height: .4rem;
+      }
+      .layercircle{
+        display: inline-block;
+        vertical-align: .05rem;
+        width: .14rem;
+        height: .14rem;
+        margin-right: .1rem;
+        border-radius: 50%;
+        box-shadow: inset 0 0 .03rem rgba(255,255,255,.35),0 .02rem .05rem rgba(85,161,244,.22);
+        background: linear-gradient(top, #39b2ff,#96dffd);
+        background: -webkit-linear-gradient(top, #39b2ff,#96dffd);
+      }
+      .layer .yellowbtn{
+        position: absolute;
+        left: 50%;
+        bottom: .30rem;
+        margin-left: -.85rem;
+        width: 1.70rem;
+        height: .54rem;
+        line-height: .54rem;
+      }
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="feedback">
+      <div class="callphone">
+        <b class="redstar">*</b>联系方式：<input type="telephone" name="" placeholder="请输入您有效的联系方式">
+      </div>
+      <div class="problem">
+        <b class="redstar">*</b>联系方式：<textarea placeholder="请描述您遇到的问题或建议，我们将因您变得更好！"></textarea>
+        <span class="numlimit">(100字内)</span>
+      </div>
+      <div class="sendpic">
+        上传图片
+        <div class="uploadimgbox">
+          <div class="uploadimg">
+            <div class="photobox" id="fileBtnJustBox">
+              <input type="file" id="fileBtnJust" onchange="filechooserF(this)" accept="image/*">
+            </div>
+            <div class="iconfont icon-yichu"></div>
+          </div>
+          <div class="uploadimg" id="photoboxother">
+            <div class="photobox" id="fileBtnBackBox">
+              <input type="file" id="fileBtnBack" onchange="filechooserF(this)" accept="image/*">
+            </div>
+            <div class="iconfont icon-yichu"></div>
+          </div>      
+        </div>        
+      </div>
+      <div class="warmtip"><span class="bluecircle"></span>温馨提示：感谢您使用我们的产品，我们将在3个工作日内进行处理，若核实后作退款处理，款项将原路退回，欢迎下次使用。</div>
+      <div class="yellowbtn">提交</div>
+    </div>
+    <div class="layer">
+      <div class="layercontbox">
+        <div class="lanyabg"></div>
+        <div class="layercont">
+          <div class="layertext"><span class="layercircle"></span>温馨提示</div>
+          <div class="openguid">请填写完整信息后再提交，谢谢！</div>
+          <div class="yellowbtn">确定</div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.body.addEventListener('touchstart', function(e){
+        console.log(e)
+        var target = e.target
+        if(target.dataset.touch === 'true'){
+            target.classList.add('active')
+        }
+    })
+    </script>
+</body>
+</html>
+
+
+

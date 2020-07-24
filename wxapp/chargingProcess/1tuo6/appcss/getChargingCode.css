@@ -1,0 +1,144 @@
+.banner{
+    background: url(../../img/getChargingCode.png),
+ -webkit-linear-gradient(top, #36a3ff, #1dc2ff);
+    background-image: url(../img/getChargingCode.png),
+ linear-gradient(top, #36a3ff, #1dc2ff);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: auto 100%;
+}
+.topfeedback{
+    width: 51.73%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.topfeedback i{
+    display: block;
+    margin-bottom: .30rem;
+    color: #fff;
+    font-size: .52rem; 
+}
+.topfeedback p{
+   color: #fff;
+   font-size: .32rem; 
+}
+.passwordbox{
+    width: 100%;
+    height: 39%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 .10rem .20rem rgba(182,189,198,.2);
+    -webkit-box-shadow: 0 .10rem .20rem rgba(182,189,198,.2);
+}
+
+.passwordcode{
+    height: 64.19%;
+    text-align: center;
+}
+.passwordcoder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 43.38%;
+    font-size: .24rem;
+    color: #959595;
+}
+.passwordcoderflex{
+  width: 100%;
+}
+.passwordremark{
+    padding-bottom: .2rem;
+    font-size: .32rem;
+    color: #36a3ff;
+    text-align: center;
+}
+.passwordremark i{
+    margin-right: .05rem;
+    color: #36a3ff;
+    font-size: .44rem;
+}
+.passwordcoder .text{
+    line-height: .40rem;
+}
+.passwordcoder .icon-help{
+    margin-left: .13rem;
+    color: #36a3ff;
+    font-size: .30rem;
+}
+.codelistfive,
+.codelistsix{
+    height: 56.62%;
+    text-align: center;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.codelistfive li,
+.codelistsix li{  
+    display: inline-block;
+    padding-bottom: .16rem;
+    margin: 0 3.09%;
+    color: #323232;
+    font-weight: bolder;
+    font-family: 'Hiragino Sans GB';
+    border-bottom: .02rem #bababa solid;
+    text-align: center;
+}
+.codelistfive li{
+    width: .66rem;
+    font-size: .76rem;
+}    
+.codelistsix li{
+    width: .8rem;
+    height:.8rem;
+    line-height: .8rem;
+    font-size: .5rem;
+}
+.costdetail{    
+  width: 100%;
+  height: 35.81%;
+  margin: 0 auto;
+}
+.costtit{
+  padding: 0 .30rem;
+  height: 22.84%;
+  font-size: .32rem;
+  color: #323232;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eef3f4;
+}
+.costtit i{
+  margin-right: .20rem;
+  font-size: .42rem;
+  color: #36a3ff;
+}
+.costmain{
+  display: flex;
+  align-items: center;
+  padding: 0 .30rem;
+  height: 50%;
+  font-size: .26rem;
+  color: #959595;
+  background: #fff;
+  border-top: 1px solid #eef3f4;
+}
+.costmainflex{
+  width: 100%;
+}
+.costmain span{
+  float: right;
+  color: #323232;
+}
+.costmain b{
+  color: #ff5f34;
+}
+.default-button .btn{
+    width: 50%;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>我的</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/weui.css" rel="stylesheet">
+    <style type="text/css">
+        .fl,
+        .left {
+            float: left;
+        }
+
+        .fr,
+        .right {
+            float: right;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .flex_item {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            font-size: .26rem;
+            background: #fff;
+            width: 100%;
+            text-align: center;
+            padding: .1rem 0;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer .flex_item {
+            color: #353535;
+        }
+
+        .footer .active {
+            color: #36A3FF;
+        }
+
+        .footer img {
+            width: .46rem;
+            height: .46rem;
+        }
+
+        .footer p {
+            line-height: .4rem;
+        }
+
+        .cell_box {
+            background: #fff;
+        }
+
+        .cell_item {
+            padding: .2rem .3rem;
+            display: flex;
+            line-height: .4rem;
+        }
+
+        .cell_left {
+            width: 1.5rem;
+            color: #000;
+        }
+
+        .cell_right {
+            color: #666;
+            float: right;
+            flex: 1;
+            text-align: right;
+            font-size: .24rem;
+        }
+
+        .cell_right:before {
+            float: right;
+            margin-left: .2rem;
+        }
+    </style>
+</head>
+
+<body style="font-size: .3rem;">
+    <script>
+        reset();
+    </script>
+
+
+    <div class="cell_box">
+        <a class="cell_item" href="">
+            <span class="cell_left">我的钱包</span>
+            <span class="cell_right iconfont icon-right"></span>
+        </a>
+        <a class="cell_item" href="">
+            <span class="cell_left">我的收益</span>
+            <span class="cell_right iconfont icon-right"></span>
+        </a>
+        <a class="cell_item" href="">
+            <span class="cell_left">我的信息</span>
+            <span class="cell_right iconfont icon-right"></span>
+        </a>
+    </div>
+    <div class="footer flex">
+        <a href="workbench.html" class="flex_item">
+            <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/tab-work.png">
+            <p>工作台</p>
+        </a>
+        <a href="mine.html" class="flex_item active">
+            <img src="http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/tab-mine-s.png">
+            <p>我的</p>
+        </a>
+    </div>
+
+    <div class="weui-cells">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">兼容IE Edge的版本</div>
+            <div class="weui-cell__ft">
+                <input class="weui-switch" type="checkbox">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/weui.min.js" rel="stylesheet"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#switchCP").is(":checked")
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>添加无人售货柜</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/iconfont.css" rel="stylesheet">
+	<style type="text/css">
+		.outbox{
+			padding-top: .4rem;
+			background: #f1f3f6;
+		}
+		.scanbtn{
+			height: .9rem;
+	         line-height:.9rem;
+	         width: 80%;
+	         padding: 0 .3rem;
+	         text-align: center;
+	         font-size: .3rem;
+	         color: #fff;
+	         border-radius:.5rem;
+	         margin: 0 auto .4rem;
+	         background: -webkit-linear-gradient(top, #36a3ff, #07adff);
+			background: linear-gradient(top, #36a3ff, #07adff);
+			box-shadow: 0 .1rem .10rem rgba(7, 173, 255, 0.22);
+
+		}
+		.devicelistbox{
+			height: 9.0rem;
+			overflow: auto;
+		}
+		.devicelist{
+			margin-bottom: .1rem;
+			padding: 0 .2rem;
+			height: 1.1rem;
+			line-height: 1.1rem;
+			background: #fff;
+			color: #959595;
+			font-size: .28rem;
+			overflow: hidden;
+		}
+		.devicelistfl{
+			float: left;
+		}
+		.devicelistfr{
+			float: right;
+		}
+		.devicelist span{
+			color: #444;
+		}
+		.devicelist b{
+			color: #f00;
+		}
+		.devicelist input{
+			margin: 0 .1rem;
+			width: 1.4rem;
+			height: .6rem;
+			line-height: .6rem;
+			color: #444;
+			text-align: center;
+			border: 1px solid #b3b4b5;
+			border-radius: .1rem;
+		}
+		.devicelist i{
+			font-size: .5rem;
+			color: #cfcece;
+		    vertical-align: middle;
+		}
+		.button{
+	         position: fixed;
+	         bottom: 0.3rem;
+	         left: 0;
+	         height: .9rem;
+	         line-height:.9rem;
+	         width: 100%;
+	         padding: 0 .3rem;
+	         text-align: center;
+	         font-size: .3rem;
+	         color: #fff;
+        }
+        .button a{
+	         display: block;
+	         background: #36A3FE;
+	         height: 100%;
+	         width: 100%;
+	         border-radius:5px;
+	         color: #fff;
+         }  
+	</style>
+</head>
+<body>
+ <script>reset();</script>
+ 	<div class="outbox">	
+	    <div class="scanbtn">添加新设备</div>
+	    <div class="devicelistbox">
+	    	<div class="devicelist">
+	    		<div class="devicelistfl">设备编号<span>123456789123456</span></div>
+	    		<div class="devicelistfr"><b>*</b>房间编号<input type="text" value=""><i class="iconfont icon-close"></i></div>
+	    	</div>
+	    </div>
+	    <div class="button" id="button"><a>确认添加</a></div></a>
+ 	</div>
+</body>
+</html>

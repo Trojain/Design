@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>设备详情</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <style type="text/css">
+          body{
+            background: #f1f3f6;
+          }
+          .title{
+            padding: 0 .3rem;
+            margin-bottom: .1rem;
+            font-size: .3rem;
+            font-weight:bold;
+            color: #444;    
+            height: 1.1rem;
+            line-height: 1.1rem;
+            background: #fff;
+          }
+          .title .icon{
+           display:inline-block;
+           height: 4px;
+           width: 4px;
+           background-color: #36a3ff;
+           border-radius:50%; 
+           margin-right: .1rem;
+           vertical-align: middle; 
+          }
+          .devicelist{
+            margin-bottom: .1rem;
+            background: #fff;
+          }
+          .bianhao{
+            height: 1rem;
+            line-height: 1rem;
+            padding: 0 .5rem;
+            font-size: .3rem;
+            color: #959595;
+            border-bottom: 1px solid #e5e5e5;
+          }
+
+          .devices{
+            max-height: 9rem;
+            padding: 0 1rem;
+            line-height: 1rem;
+            font-size: .28rem;
+            text-align: center;
+            overflow: auto;
+          }
+      .button{
+         position: fixed;
+         bottom: 0.3rem;
+         left: 0;
+         height: .9rem;
+         line-height:.9rem;
+         width: 100%;
+         padding: 0 .3rem;
+         text-align: center;
+         font-size: .3rem;
+         color: #fff;
+      }
+      .button span{
+         display: block;
+         background: #36A3FE;
+         height: 100%;
+         width: 100%;
+         border-radius:3px;
+       }           
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="title">
+      <span class="icon"></span>
+      可分润比例75%，设备共77个
+    </div>
+    <div class="devicelist">
+      <div class="bianhao">设备编号：</div>
+      <div class="devices">12345678912345、12345678912345、</div>
+    </div>
+    <div class="button"><span>返回</span></div>
+</body>
+</html>

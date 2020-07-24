@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提现记录</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<script src="../js/reset.js"></script>
+		<link href="../css/reset.css" rel="stylesheet">
+		<link href="../css/mobiscroll_date.css" rel="stylesheet">
+	    <link href="../appcss/merchantWithdrawalRecord.css" rel="stylesheet">
+	</head>
+	<body>
+	    <script>reset();</script>
+		<div class="seachbox">			
+			<input class="datetime" type="text" name="startTime" id="startTime" readonly value="">
+			<span>到</span>
+			<input class="datetime" type="text" name="endTime" id="endTime" readonly value="">			
+			<div class="search" id="search">查询</div>
+		</div>
+		<div class="record-box">
+			<div class="recorddetal">
+				<div class="recorddetalin">渠道：微信钱包</div>
+				<div class="recorddetalin">状态：<span class="tixianwancheng">提现中</span></div>
+			</div>
+			<div class="recorddetal">
+				<div class="recorddetalin">提现金额：￥20.0000</div>
+				<div class="recorddetalin">提现手续费：￥20.0000</div>
+			</div>
+			<div class="recorddetal">
+				<div class="recorddetalin">支付手续费：￥20.0000</div>
+				<div class="recorddetalin">税费：￥5.00</div>
+			</div>
+			<div class="recorddetal">
+				<div class="recorddetalin">实际到账：￥20.0000</div>
+				<div class="recorddetalin">到账微信：￥20.0000</div>
+			</div>
+			<div class="recorddetal">
+				<div class="recorddetalin time">提现时间：07-16 10:00:00</div>
+			</div>
+			<div class="recorddetal">
+				<div class="recorddetalin time">到账时间：07-16 10:00:00</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/mobiscroll_date.js" charset="gb2312"></script> 
+		<script src="../js/mobiscroll.js"></script> 
+		<script type="text/javascript">
+		$(function () {
+			var oDate = new Date(); //实例一个时间对象；
+			var year = oDate.getFullYear();   //获取系统的年；
+			var mouth = oDate.getMonth();   //获取系统月份，由于月份是从0开始计算，所以要加1
+			var mouthend = oDate.getMonth()+1;	
+			var day = oDate.getDate(); // 获取系统日	
+			if (mouthend == 1) {
+				var yearpre = year - 1;
+				$("#startTime").val(yearpre+"-"+12 +"-"+ day);
+			}else{
+				$("#startTime").val(year+"-"+mouth +"-"+ day);
+			}
+			$("#endTime").val(year+"-"+mouthend +"-"+ day);
+
+			var currYear = (new Date()).getFullYear();	
+			var opt={};
+			opt.date = {preset : 'date'};
+			opt.datetime = {preset : 'datetime'};
+			opt.time = {preset : 'time'};
+			opt.defaultparam = {
+				theme: 'android-ics light', //皮肤样式
+				display: 'modal', //显示方式 
+				mode: 'scroller', //日期选择模式
+				dateFormat: 'yyyy-mm-dd',
+				lang: 'zh',
+				showNow: true,
+				nowText: "今天",
+				startYear: currYear - 50, //开始年份
+				endYear: currYear + 10 //结束年份
+			};
+
+			$("#startTime").mobiscroll($.extend(opt['date'], opt['defaultparam']));
+			$("#endTime").mobiscroll($.extend(opt['date'], opt['defaultparam']));
+
+		});
+		</script>
+
+	</body>
+</html>

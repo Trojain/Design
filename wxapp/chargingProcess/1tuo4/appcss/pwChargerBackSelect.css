@@ -1,0 +1,79 @@
+.banner {
+    background: url(../../img/pwChargerBackSelect.png),
+ -webkit-linear-gradient(top, #36a3ff, #1dc2ff);
+    background-image: url(../../img/pwChargerBackSelect.png),
+ linear-gradient(top, #36a3ff, #1dc2ff);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: auto 100%;
+}
+.topfeedback{
+    width: 51.73%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.topfeedback i{
+    display: block;
+    margin-bottom: .30rem;
+    color: #fff;
+    font-size: .52rem; 
+}
+.topfeedback p{
+   color: #fff;
+   font-size: .32rem; 
+}
+.costdetail{
+  height: 37.81%;
+}
+.costtit{
+  padding: 0 .30rem;
+  height: 22.84%;
+  font-size: .32rem;
+  color: #323232;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.costtit i{
+  margin-right: .20rem;
+  font-size: .42rem;
+  color: #36a3ff;
+}
+.costmain{
+  display: flex;
+  align-items: center;
+  padding: 0 .30rem;
+  height: 19.29%;
+  font-size: .26rem;
+  color: #959595;
+  background: #fff;
+  border-bottom: 1px solid #eef3f4;
+}
+.costmainflex{
+  width: 100%;
+}
+.costmain span{
+  float: right;
+  color: #323232;
+}
+.costmain b{
+  color: #ff5f34;
+}
+.default-button{
+    left: 2.7%;
+    bottom: 1.64%;
+    width: 94.6%;
+    height: 7.29%;
+    border-radius: .50rem;
+}
+.default-button .btn{
+    width: 50%;
+}
+.default-button .btnr{
+    background: #30a4ff;
+    border-radius: 0 .50rem .50rem 0;
+    color: #fff;
+}

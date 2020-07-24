@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>保证金</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <style type="text/css">
+      .header-con{
+        position:relative;
+        font-size: .30rem;
+        height:4rem;
+        width:100%;
+        background:url(../img/bg.jpg) no-repeat;
+        background-size:100%;
+      }
+      .center-con{
+        width:3.5rem;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-1.75rem,-.25rem);
+        display:block;
+        color:#fff;
+        text-align: center;
+      }
+      .center-con .title{
+        margin:5px 0;
+        opacity: .7;
+      }
+      .center-con .money{
+        font-size:0.7rem;
+        margin:5px 0 10px 0;
+      }
+      .bond-detail{
+        display: block;
+
+      }
+      .bond-detail p{
+        float: right;
+        padding: .5rem .2rem;
+        color: #fff;
+      }
+      .button{
+         position: fixed;
+         bottom: 0.3rem;
+         left: 0;
+         height: .9rem;
+         line-height:.9rem;
+         width: 100%;
+         padding: 0 .3rem;
+         text-align: center;
+         font-size: .3rem;
+         color: #fff;
+        }
+        .button a{
+         display: block;
+         background: #36A3FE;
+         height: 100%;
+         width: 100%;
+         border-radius:5px;
+         }      
+    </style>
+</head>
+<body>
+    <script>reset();</script>
+    <div class="header-con">
+      <a href="/mchgzhpt/appjsp/merchantcenter/walletBag/incomeDetail.jsp?merchantId=171116068112" class="bond-detail">
+        <p>保证金缴纳明细 ></p>
+      </a>
+      <div class="center-con">             
+            <p class="money">4000.00</p>
+            <p class="title">冻结中</p>
+      </div>
+    </div>
+    <div class="button" id="button"><a href="">缴纳</a></div></a>
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+
+body{
+    background:#eaeaea;
+}
+.fr{
+    float: right;
+}
+.withdraw{
+    padding-bottom: 16px;
+    font-size: 14px;
+    padding-bottom: .4rem;
+    color: #333;
+    border-radius: .05rem;
+    -webkit-border-radius: .05rem;
+    box-shadow: 0 0 0.4rem #ececec;
+    -webkit-border-radius: 0 0 0.4rem #ececec;   
+}
+.withdraw .paytotit{
+    height: 48px;
+    line-height: 48px;
+
+    height: 1.14rem;
+    line-height: 1.14rem;
+    padding-left: 8.0%;
+    background: #fbfbfb;
+    border-radius: .05rem .05rem 0 0;
+    -webkit-border-radius: .05rem .05rem 0 0;
+}
+.withdraw .paytotit span{
+    margin-left: 26px;
+    margin-left: .6rem;
+    color: #1183b7;
+}
+.withdraw .paytotit b{
+    display: block;
+    float: right;
+    width: 48px;
+    font-size: 20px;
+    width: 1.13rem;
+    text-align: center;
+    color: #999;
+}
+.withdraw .withdrawinfo{
+    padding: 0 8.0% .2rem;
+    margin-bottom: .2rem;
+    background: #fff;
+}
+.withdraw .moneytit{
+    height: 54px;
+    line-height: 54px;
+
+    height: 1.26rem;
+    line-height: 1.26rem;
+}
+.withdraw .howmoney{
+    padding-bottom: 4px;
+    padding-bottom: .1rem;
+    border-bottom: 1px solid #d8d8d8;
+}
+.withdraw .howmoney b{
+    font-size: 28px;
+    vertical-align: top;
+}
+.withdraw .howmoney input{
+    display: inline-block;
+    max-width: 85%;
+    margin-top: -4px;
+    font-size: 44px;
+    text-indent: 10px;
+
+    margin-top: -.18rem;
+    text-indent: .2rem;
+    outline: none;
+}
+.withdraw .canwithdraw{
+    margin: 20px 0 10px 0;
+
+    margin: .4rem 0 .2rem 0;
+    color: #999;
+}
+.withdraw .limittxt{
+    margin: 15px 0;
+
+    margin: .35rem 0;
+    color: #d43536;
+}
+.withdraw .withdrawtip{
+    display: none;
+    line-height: .5rem;
+    margin: 20px 0 10px 0;
+
+    margin: .4rem 0 .2rem 0;
+    color: #d43536;
+}
+.withdraw .canwithdraw span,.moneytit a{
+    color: #1183b7;
+}
+.withdraw .canwithdraw-btn{
+    width: 84%;
+    margin: .4rem 8%;
+    height: .9rem;
+    line-height: .9rem;
+    text-align: center;
+    color: #fff;
+    background: #2da8e1;
+    border-radius: .1rem;
+    -webkit-border-radius: .1rem;
+    border: 2px solid #009de4;
+    opacity: .5;
+}
+
+
+.withdraw-limit{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+}
+.withdraw-limit .limit-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -90px;
+    width: 280px;
+    font-size: 16px;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.withdraw-limit .limit-cont p{   
+    padding: 25px 12px;
+    line-height: 24px;
+}
+.limitbtn{
+    border-top: 1px solid #efefef;
+    height: 50px;
+    line-height: 50px;
+    color: #1bc5f7;
+    font-size: 18px;
+}
+.withdrawway,.withdrawkoufei{
+    margin-bottom: .2rem;
+    padding: 0 8.0%;
+    background: #fff;
+}
+.withdrawwayint{
+    padding: .4rem 0 .2rem;
+    border-bottom: 1px solid #ddd;
+}
+.withdrawwayint input{
+    vertical-align: middle;
+    margin-right: .1rem;
+}
+.withdrawway .withdrawwayint:last-child,
+.withdrawkoufei .withdrawwayint:last-child{
+    border-bottom: none;
+}
+.withdrawwayint .paymoney{
+    float: right;
+}
+.icon-wenhao{
+    margin-left: .1rem;
+    color: #1183b7;
+    font-size: .36rem;
+}

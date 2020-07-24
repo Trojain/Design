@@ -1,0 +1,44 @@
+{
+  "id": "1544640",
+  "name": "tao'tao'ji",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1108013",
+      "name": "通知",
+      "font_class": "guangbo",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "5782875",
+      "name": "AK-ZY蓝牙",
+      "font_class": "lanya",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6756299",
+      "name": "右箭头1",
+      "font_class": "youjiantou",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "8605730",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "9626972",
+      "name": "移除",
+      "font_class": "yichu",
+      "unicode": "e888",
+      "unicode_decimal": 59528
+    }
+  ]
+}

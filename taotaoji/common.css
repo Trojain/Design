@@ -1,0 +1,25 @@
+  body{
+    color: #444;
+    font-size: .30rem;
+  }
+  *{
+    box-sizing: border-box;
+  }
+  .bluecircle{
+    position: absolute;
+    left: 0;
+    width: .14rem;
+    height: .14rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 .03rem rgba(255,255,255,.35),0 .02rem .05rem rgba(85,161,244,.22);
+    background: linear-gradient(top, #39b2ff,#96dffd);
+    background: -webkit-linear-gradient(top, #39b2ff,#96dffd);
+  }
+  .yellowbtn{
+    border-radius: .10rem;
+    box-shadow: inset 0 0 .10rem rgba(255,255,255,.3),0 .02rem .15rem rgba(155,81,2,.2);
+    background: linear-gradient(120deg, #fdb419,#fe7b1b);
+    background: -webkit-linear-gradient(120deg, #fdb419,#fe7b1b);
+    color: #fff;
+    text-align: center; 
+  }

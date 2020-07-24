@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>我的钱包</title>
+    <script src="js/reset.js"></script>
+    <link href="css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+    <style type="text/css">
+.mywallet{
+  position: relative;
+  height: 100%;
+  background: #f5f7f7;
+}
+.yuerbox{
+  position: absolute;
+  top: .5rem;
+  height: 29%;
+  width: 100%;
+}
+  .yuer{
+    padding-left: .4rem;
+    display: flex;
+    align-items: center;
+    width: 6.54rem;
+    height: 3.0rem;
+    margin: 0 auto;
+    background: url(images/mywalletbg.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  .yuertext{
+    margin-bottom: .2rem;
+    font-size: .32rem;
+    color: #fff;
+  }
+  .yuernum{
+    font-size: .8rem;
+    color: #ffdc7d;
+  }
+  .ucercenternav{
+    height: 86%;
+    background: #fff;
+    box-shadow: 0 -.08rem .10rem rgba(0,49,122,.16);
+  }
+  .tixianBtn{
+    position: absolute;
+    bottom: .40rem;
+    left: 50%;
+    margin-left: -2.24rem;
+    width: 4.48rem;
+    height: 1.11rem;
+    line-height: 1.11rem;
+    text-align: center;
+    font-size: .4rem;
+    color: #fff;
+    background: #36a3ff;
+    box-shadow: inset 0 0.04rem 0.1rem rgba(223,249,254,.4), 0 0.08rem 0.15rem rgba(0,49,122,.3);
+    border-radius: .20rem;
+  }
+  .navbtn{
+    display: block;
+    margin: 0 .34rem;
+    height: 1.00rem;
+    line-height: 1.00rem;
+    color: #444;
+    font-size: .30rem;
+    border-bottom: 1px solid #bfbfbf;
+  }
+  .navbtn .icon-more{
+    float: right;
+    font-size: .30rem;
+    color: #36a3ff;
+    font-weight: bolder;
+  }
+
+  .shanjin{
+    float: right;
+    height: 100%;
+    font-size: 0;
+  }
+  .shanjinnum{
+    font-size: .30rem;
+  }
+      
+    </style>
+</head>
+<body class="mywallet">
+    <script>reset();</script>
+    <div class="mywallet"> 
+      <div style="height: 14%;"></div>
+      <div class="yuerbox">
+        <div class="yuer">
+          <div>
+            <p class="yuertext">余额（元）</p>
+            <p class="yuernum">1.00</p>            
+          </div>
+        </div>
+        <div class="tixianBtn">立即提现</div>
+      </div>
+      <div class="ucercenternav">
+        <div style="height: 27%;"></div>
+        <a class="navbtn" style="border-top: 1px solid #bfbfbf;">
+            预付金
+            <div class="shanjin">    
+              <span class="shanjinnum">￥30.00</span>
+              <i class="iconfont icon-more"></i>
+            </div>
+        </a>
+        <form id="flowRecordForm" action="" method = "post">
+        <div class="navbtn">
+            流水记录         
+            <i class="iconfont icon-more"></i>
+        </div>
+        </form>                             
+      </div>
+    </div>  
+</body>
+</html>
+
+
+

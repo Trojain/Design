@@ -1,0 +1,110 @@
+
+
+.opencode{
+	height: 28.5%;
+	text-align: center;
+}
+.opencodetext{
+    display: flex;
+    height: 24%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: .32rem;
+    color: #444;
+}
+.codelist{
+    height: 40.625%;
+    text-align: center;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.codelist span{  
+    display: inline-block;
+    margin: 0 .21rem;
+    color: #fff;
+    font-weight: bolder;
+    font-family: 'Hiragino Sans GB';
+    text-align: center;
+    width: .74rem;
+    height: .74rem;
+    line-height: .74rem;
+    font-size: .50rem;
+	color: #fff;
+	background:-webkit-linear-gradient(top, #36a3fe, #98ebfa);
+	background:-o-linear-gradient(top, #36a3fe, #98ebfa);
+	background:-moz-linear-gradient(top, #36a3fe, #98ebfa);
+	background:linear-gradient(top, #36a3fe, #98ebfa);
+	box-shadow:0 .04rem .10rem rgba(151,248,252,.22);
+	border-radius:.1rem;
+}
+.codelist span:first-child{
+	margin-left: 0;
+}
+.codelist span:last-child{
+	margin-right: 0;
+}
+.wuyouxing-bottombtn{
+	justify-content: center;
+	color: #36a3fe;
+	font-size: .32rem;
+}
+.wuyouxing-bottombtn i{
+	font-size: .44rem;
+    margin-right: .1rem;
+}
+
+
+
+
+
+
+
+.step{
+    width: 33.3%;
+}
+
+.stepimg{
+    margin: 0 auto;
+}
+.stepimg img{
+    margin-left: .05rem;
+}
+.stepstetail{
+    height: .62rem;
+}
+.arrow{
+    margin-top: .5rem;
+}
+.opencode{
+    height: 40.8%;
+}
+.reminder{
+    height: 28%;
+}
+.getpassword{
+    width: 4.0rem;
+    height: .7rem;
+    line-height: .7rem;
+    margin: .25rem auto 0;
+}
+.reminder .fuwuchoosetit{
+    font-size: .32rem;
+}
+.reminder div{
+    font-size: .28rem;
+}
+.layertext{
+    padding: 1.0rem 0;
+    width: 78%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.layertext:after{
+    left: -.2rem;
+    top: 1.2rem;
+}
