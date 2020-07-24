@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>费用管理</title>
+    <script src="../js/reset.js"></script>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/weui.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cost-manage">
+        111
+    </div>
+
+
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/weui.min.js" rel="stylesheet"></script>
+
+    <script type="text/javascript">
+        reset();
+        var path = '<%=path%>';
+
+
+
+
+
+        $(function () {
+            var params = {
+                title: "提示",
+                content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
+                oneBtn: false,
+                okText: "确定",
+                cancelText: "取消",
+                succFun: function () { console.log('点击了确定按钮'); },
+                cancelFun: function () { console.log('点击了取消按钮'); }
+            }
+            $('#modifyBtn').on('click', function () {
+                showDialog(params);
+            })
+
+        });
+
+
+
+        function showDialog(params) {
+            var str = '<div class="js_dialog"><div class="weui-mask"></div><div class="weui-dialog"><div class="weui-dialog__hd"><strong class="weui-dialog__title">' + (params.title || '提示') + '</strong></div><div class="weui-dialog__bd">' + params.content + '</div><div class="weui-dialog__ft">';
+            if (!params.oneBtn) {
+                str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_default cancel-btn">' + (params.cancelText || '取消') + '</a>';
+            }
+            str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_primary ok-btn">' + (params.okText || '确定') + '</a></div></div></div>'
+
+            $('body').append(str);
+            $('.cancel-btn').bind('click', function () {
+                if (params.cancelFun) {
+                    params.cancelFun();
+                }
+                hideDialog();
+            })
+            $('.ok-btn').bind('click', function () {
+                if (params.succFun) {
+                    params.succFun();
+                }
+                hideDialog();
+            })
+        }
+
+        function hideDialog() {
+            $('.js_dialog').hide();
+            $('.js_dialog').remove();
+            $('.cancel-btn,.ok-btn').off('click');
+        }
+    </script>
+</body>
+
+</html>
