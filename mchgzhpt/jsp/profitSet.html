@@ -8,7 +8,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="yes" name="apple-touch-fullscreen">
-    <title>费用管理</title>
+    <title>分润设置</title>
     <script src="../js/reset.js"></script>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../iconfont/workbench/iconfont.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     <link href="../css/index.css" rel="stylesheet">
     <style>
         .title {
-            padding: 0.2rem .3rem;
+            padding: .3rem;
             background-color: #fff;
         }
 
@@ -25,101 +25,127 @@
             padding: .1rem 0;
         }
 
-        .weui-cells .weui-cell:first-child {
-            border-bottom: 1px solid #ddd;
-        }
-
         .weui-cells .weui-cell__bd {
             text-align: right;
         }
 
-        .weui-cells .weui-label {
-            width: auto;
+        .num-box {
+            max-height: 4.2rem;
+            overflow-y: auto;
+            font-size: 0.28rem;
+        }
+
+        .num-box li {
+            list-style: none;
+            width: 50%;
+            float: left;
+            padding: .1rem 0;
+        }
+
+        .weui-cells .weui-cell:first-child {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .num-input {
+            line-height: .6rem;
+            width: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .tips {
+            line-height: 0.4rem;
+            color: red;
+            font-size: .26rem;
         }
     </style>
 </head>
 
 <body style="background: #ddd;">
-    <div class="cost-manage">
+    <div class="profit-set">
         <div class="title">商户XXXX丨 代理商 23423432丨客户号200211</div>
-
         <div class="weui-cells">
             <div class="weui-cell">
-                <div class="weui-cell__hd">智能共享充电器</div>
+                <div class="weui-cell__hd">智能共享充电宝费用设置</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">设置的设备：(10个)</div>
                 <div class="weui-cell__bd">
-                    <button class="btn mini-btn">全部设置</button>
+                    <button class="btn mini-btn" id="infoBtn">查看详情</button>
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd">计费1：1小时1元 前5分钟免费（10条）</div>
-                <div class="weui-cell__bd">
-                    <button class="btn mini-btn">设置</button>
-                </div>
-            </div>
-            <div class="weui-cell">
-                <div class="weui-cell__hd">计费2：1小时2元（10条）</div>
-                <div class="weui-cell__bd">
-                    <button class="btn mini-btn">设置</button>
-                </div>
+                <div class="weui-cell__hd">点击查看详情，可查看已选择的所有设备编号</div>
             </div>
         </div>
-
         <div class="weui-cells">
             <div class="weui-cell">
                 <div class="weui-cell__hd">
-                    <label class="weui-label">智能招财猫</label>
-                </div>
-                <div class="weui-cell__bd">
-                    <button class="btn mini-btn">全部设置</button>
+                    <span class="asterisk">*</span>分润设置：
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd">计费：押金99元，前1小时1元，后每1小时2元，每日封顶金额10元，前10分钟免费</div>
+                <div class="radio-box">
+                    <label><input type="radio" name="profit" value="1">绝对分润</label>
+                    <label><input type="radio" name="profit" value="2">相对分润</label>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    分润比例：<input type="text" class="num-input">%
+                </div>
+            </div>
+            <div class="weui-cell">
+                <p class="tips">温馨提示：您当前实际拥有可分配的比例为30%，为商户设置分润比例只能≤30%</p>
             </div>
         </div>
+        <button class="btn primary-btn fixed-btn">提交</button>
 
-        <div class="weui-cells">
-            <div class="weui-cell">
-                <div class="weui-cell__hd">智能共享充电宝</div>
-                <div class="weui-cell__bd">
-                    <button class="btn mini-btn">全部设置</button>
-                </div>
-            </div>
-            <div class="weui-cell">
-                <div class="weui-cell__hd">计费：未设置</div>
-            </div>
+        <!-- 设置的设备弹框内容 -->
+        <div class="numBox hide">
+            <ul class="num-box">
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+                <li>20053400000133</li>
+            </ul>
         </div>
     </div>
-
-
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/weui.min.js" rel="stylesheet"></script>
-
     <script type="text/javascript">
         reset();
         var path = '<%=path%>';
-
-
-
-
-
         $(function () {
-            var params = {
-                title: "提示",
-                content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
-                oneBtn: false,
-                okText: "确定",
-                cancelText: "取消",
-                succFun: function () { console.log('点击了确定按钮'); },
-                cancelFun: function () { console.log('点击了取消按钮'); }
-            }
-            $('#modifyBtn').on('click', function () {
+            $('#infoBtn').on('click', function () {
+                var content = $('.numBox').html();
+                var params = {
+                    title: "设置的设备编号",
+                    content: content,
+                    oneBtn: false,
+                    okText: "确定",
+                    cancelText: "取消",
+                    succFun: function () { console.log('点击了确定按钮'); },
+                    cancelFun: function () { console.log('点击了取消按钮'); }
+                }
                 showDialog(params);
             })
-
         });
-
-
 
         function showDialog(params) {
             var str = '<div class="js_dialog"><div class="weui-mask"></div><div class="weui-dialog"><div class="weui-dialog__hd"><strong class="weui-dialog__title">' + (params.title || '提示') + '</strong></div><div class="weui-dialog__bd">' + params.content + '</div><div class="weui-dialog__ft">';
@@ -127,7 +153,6 @@
                 str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_default cancel-btn">' + (params.cancelText || '取消') + '</a>';
             }
             str += '<a href="javascript:" class="weui-dialog__btn weui-dialog__btn_primary ok-btn">' + (params.okText || '确定') + '</a></div></div></div>'
-
             $('body').append(str);
             $('.cancel-btn').bind('click', function () {
                 if (params.cancelFun) {

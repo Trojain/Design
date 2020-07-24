@@ -96,25 +96,28 @@ a {
     color: #666;
 }
 
+.mini-btn {
+    font-size: .24rem;
+    padding: .1rem .2rem;
+}
+
 .primary-btn {
-    font-size: .3rem;
-    border-radius: 5px;
     border: none;
     background-color: #36A3FF;
     color: #fff;
 }
 
 .fixed-btn {
-    width: 80%;
-    padding: .1rem;
+    width: 90%;
+    padding: .2rem;
     position: fixed;
     bottom: 2%;
-    left: 10%;
+    left: 5%;
 }
 
 .asterisk {
     color: red;
-    margin-right: 10rpx;
+    margin-right: .1rem;
     vertical-align: middle;
     font-weight: bold;
 }
@@ -195,11 +198,23 @@ a {
     -webkit-appearance: none;
 }
 
+/* 单选框 */
+.radio-box label {
+    margin-right: .6rem;
+}
+
+.radio-box input {
+    margin-right: 0.1rem;
+    position: relative;
+    top: 0.02rem;
+}
+
 /* --------------------------------------------- 工作台 --------------------------------------------- */
 .workbench {
     background-color: #e1eef8;
     font-size: .3rem;
-    padding-bottom: .3rem;
+    padding-bottom: .6rem;
+    min-height: 100%;
 }
 
 .workbench .header {
@@ -275,13 +290,12 @@ a {
 
 .workbench .container .item {
     text-align: center;
-    padding-bottom: .2rem;
+    padding: .24rem 0;
 }
 
 .workbench .container .title {
     color: #353535;
     font-size: .3rem;
-    padding-top: .3rem;
 }
 
 .workbench .container .title .fl {
@@ -294,9 +308,9 @@ a {
     display: inline-block;
     background: url("http://applet-prd.oss-cn-shenzhen.aliyuncs.com/mch-wxapp/title-icon.png") center center no-repeat;
     width: .06rem;
-    height: .36rem;
+    height: .3rem;
     position: absolute;
-    top: 0;
+    top: .1rem;
     left: 0;
 }
 
@@ -312,7 +326,6 @@ a {
 
 .workbench .container .float {
     color: #353535;
-    margin-top: .24rem;
 }
 
 .workbench .container .float-item {
@@ -377,6 +390,17 @@ a {
 
 .weui-cells {
     font-size: .28rem;
+    margin: .2rem 0;
+}
+
+.weui-cell {
+    line-height: .6rem;
+    padding: 0.1rem .3rem;
+    align-items: baseline;
+}
+
+.weui-right {
+    text-align: right;
 }
 
 /* 强提示 */
@@ -387,6 +411,7 @@ a {
 
 .weui-dialog .weui-dialog__bd {
     margin: 0;
+    padding: 0 .3rem;
     font-size: 0.3rem;
 }
 
